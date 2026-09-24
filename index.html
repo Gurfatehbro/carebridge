@@ -95,14 +95,8 @@
         </div>
       </a>
 
+      <!-- Desktop Primary Navigation (Links ONLY) -->
       <nav class="main-nav" id="mainNav" aria-label="Primary Navigation">
-        <div class="mobile-nav-header">
-          <div class="mobile-nav-brand">
-            <span class="mobile-nav-logo-symbol">+</span>
-            <span>CareBridge Delhi</span>
-          </div>
-          <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&times;</button>
-        </div>
         <ul class="nav-list">
           <li><a href="#specialties" class="nav-link" data-i18n="nav_specialties">Specialties</a></li>
           <li><a href="#hospitals" class="nav-link" data-i18n="nav_hospitals">Delhi Hospitals</a></li>
@@ -112,52 +106,6 @@
           <li><a href="#how-it-works" class="nav-link" data-i18n="nav_journey">Patient Journey</a></li>
           <li><a href="#testimonials" class="nav-link" data-i18n="nav_testimonials">Success Stories</a></li>
         </ul>
-        <div class="mobile-nav-footer">
-          <a href="tel:+918585931010" class="mobile-nav-call">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            <span data-i18n="call_helpline">Call Desk: +91 8585931010</span>
-          </a>
-          <button class="btn btn-secondary mobile-opinion-btn" onclick="openConsultModal('Second Opinion')">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-            <span data-i18n="btn_second_opinion">Free 2nd Opinion</span>
-          </button>
-          <div class="mobile-select-grid">
-            <div class="mobile-select-item notranslate" translate="no">
-              <span class="notranslate" translate="no">🌐</span>
-              <select id="mobileLanguageSelect" class="notranslate" translate="no" aria-label="Select Language">
-                <option value="en" selected class="notranslate" translate="no">English</option>
-                <option value="hi" class="notranslate" translate="no">हिन्दी (Hindi)</option>
-                <option value="ar" class="notranslate" translate="no">العربية (Arabic)</option>
-                <option value="ru" class="notranslate" translate="no">Русский (Russian)</option>
-                <option value="uz" class="notranslate" translate="no">O'zbek tili (Uzbek)</option>
-                <option value="bn" class="notranslate" translate="no">বাংলা (Bengali)</option>
-                <option value="fr" class="notranslate" translate="no">Français (French)</option>
-                <option value="sw" class="notranslate" translate="no">Kiswahili (Swahili)</option>
-                <option value="fa" class="notranslate" translate="no">فارسی (Persian)</option>
-                <option value="ur" class="notranslate" translate="no">اردو (Urdu)</option>
-                <option value="ps" class="notranslate" translate="no">پښتو (Pashto)</option>
-                <option value="es" class="notranslate" translate="no">Español (Spanish)</option>
-                <option value="de" class="notranslate" translate="no">Deutsch (German)</option>
-                <option value="tr" class="notranslate" translate="no">Türkçe (Turkish)</option>
-                <option value="id" class="notranslate" translate="no">Bahasa Indonesia</option>
-                <option value="vi" class="notranslate" translate="no">Tiếng Việt (Vietnamese)</option>
-                <option value="my" class="notranslate" translate="no">မြန်မာ (Burmese)</option>
-                <option value="am" class="notranslate" translate="no">አማርኛ (Amharic)</option>
-                <option value="so" class="notranslate" translate="no">Soomaali (Somali)</option>
-              </select>
-            </div>
-            <div class="mobile-select-item">
-              <span>💵</span>
-              <select id="mobileCurrencySelect" aria-label="Select Currency">
-                <option value="USD" selected>USD ($)</option>
-                <option value="EUR">EUR (€)</option>
-                <option value="AED">AED (د.إ)</option>
-                <option value="GBP">GBP (£)</option>
-                <option value="INR">INR (₹)</option>
-              </select>
-            </div>
-          </div>
-        </div>
       </nav>
 
       <div class="header-actions">
@@ -177,6 +125,72 @@
       </div>
     </div>
   </header>
+
+  <!-- MOBILE SLIDE-OUT DRAWER (Completely independent from desktop header) -->
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <div class="mobile-drawer-brand">
+        <span class="mobile-nav-logo-symbol">+</span>
+        <span>CareBridge Delhi</span>
+      </div>
+      <button class="mobile-drawer-close" id="mobileNavClose" aria-label="Close menu">&times;</button>
+    </div>
+    <ul class="mobile-drawer-list">
+      <li><a href="#specialties" class="mobile-drawer-link" data-i18n="nav_specialties">Specialties</a></li>
+      <li><a href="#hospitals" class="mobile-drawer-link" data-i18n="nav_hospitals">Delhi Hospitals</a></li>
+      <li><a href="#doctors" class="mobile-drawer-link" data-i18n="nav_doctors">Renowned Doctors</a></li>
+      <li><a href="#calculator" class="mobile-drawer-link" data-i18n="nav_calculator">Cost Calculator</a></li>
+      <li><a href="#concierge" class="mobile-drawer-link" data-i18n="nav_concierge">International Concierge</a></li>
+      <li><a href="#how-it-works" class="mobile-drawer-link" data-i18n="nav_journey">Patient Journey</a></li>
+      <li><a href="#testimonials" class="mobile-drawer-link" data-i18n="nav_testimonials">Success Stories</a></li>
+    </ul>
+    <div class="mobile-drawer-footer">
+      <a href="tel:+918585931010" class="mobile-drawer-call">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        <span data-i18n="call_helpline">Call Desk: +91 8585931010</span>
+      </a>
+      <button class="btn btn-secondary w-100" onclick="openConsultModal('Second Opinion')">
+        <span data-i18n="btn_second_opinion">Free 2nd Opinion</span>
+      </button>
+      <div class="mobile-select-grid">
+        <div class="mobile-select-item notranslate" translate="no">
+          <span class="notranslate" translate="no">🌐</span>
+          <select id="mobileLanguageSelect" class="notranslate" translate="no" aria-label="Select Language">
+            <option value="en" selected class="notranslate" translate="no">English</option>
+            <option value="hi" class="notranslate" translate="no">हिन्दी (Hindi)</option>
+            <option value="ar" class="notranslate" translate="no">العربية (Arabic)</option>
+            <option value="ru" class="notranslate" translate="no">Русский (Russian)</option>
+            <option value="uz" class="notranslate" translate="no">O'zbek tili (Uzbek)</option>
+            <option value="bn" class="notranslate" translate="no">বাংলা (Bengali)</option>
+            <option value="fr" class="notranslate" translate="no">Français (French)</option>
+            <option value="sw" class="notranslate" translate="no">Kiswahili (Swahili)</option>
+            <option value="fa" class="notranslate" translate="no">فارسی (Persian)</option>
+            <option value="ur" class="notranslate" translate="no">اردو (Urdu)</option>
+            <option value="ps" class="notranslate" translate="no">پښتو (Pashto)</option>
+            <option value="es" class="notranslate" translate="no">Español (Spanish)</option>
+            <option value="de" class="notranslate" translate="no">Deutsch (German)</option>
+            <option value="tr" class="notranslate" translate="no">Türkçe (Turkish)</option>
+            <option value="id" class="notranslate" translate="no">Bahasa Indonesia</option>
+            <option value="vi" class="notranslate" translate="no">Tiếng Việt (Vietnamese)</option>
+            <option value="my" class="notranslate" translate="no">မြန်မာ (Burmese)</option>
+            <option value="am" class="notranslate" translate="no">አማርኛ (Amharic)</option>
+            <option value="so" class="notranslate" translate="no">Soomaali (Somali)</option>
+          </select>
+        </div>
+        <div class="mobile-select-item">
+          <span>💵</span>
+          <select id="mobileCurrencySelect" aria-label="Select Currency">
+            <option value="USD" selected>USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="AED">AED (د.إ)</option>
+            <option value="GBP">GBP (£)</option>
+            <option value="INR">INR (₹)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </aside>
 
   <!-- HERO SECTION WITH SMART DISCOVERY ENGINE -->
   <section class="hero-section" id="home">

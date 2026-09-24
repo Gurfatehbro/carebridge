@@ -1076,17 +1076,20 @@ function initStickyHeader() {
 
 function initMobileMenu() {
   const btn = document.getElementById('mobileMenuBtn');
-  const nav = document.getElementById('mainNav');
+  const drawer = document.getElementById('mobileDrawer');
+  const backdrop = document.getElementById('mobileDrawerBackdrop');
   const closeBtn = document.getElementById('mobileNavClose');
 
   const toggleMenu = (open) => {
-    const shouldOpen = typeof open === 'boolean' ? open : !nav?.classList.contains('active');
+    const shouldOpen = typeof open === 'boolean' ? open : !drawer?.classList.contains('active');
     if (shouldOpen) {
-      nav?.classList.add('active');
+      drawer?.classList.add('active');
+      backdrop?.classList.add('active');
       btn?.classList.add('active');
       document.body.style.overflow = 'hidden';
     } else {
-      nav?.classList.remove('active');
+      drawer?.classList.remove('active');
+      backdrop?.classList.remove('active');
       btn?.classList.remove('active');
       document.body.style.overflow = '';
     }
@@ -1102,9 +1105,14 @@ function initMobileMenu() {
     toggleMenu(false);
   });
 
-  // Close on nav link click
-  const navLinks = document.querySelectorAll('.nav-link');
-  navLinks.forEach(link => {
+  backdrop?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu(false);
+  });
+
+  // Close on mobile drawer link click
+  const drawerLinks = document.querySelectorAll('.mobile-drawer-link');
+  drawerLinks.forEach(link => {
     link.addEventListener('click', () => {
       toggleMenu(false);
     });
@@ -1112,7 +1120,7 @@ function initMobileMenu() {
 
   // Close when clicking outside drawer
   document.addEventListener('click', (e) => {
-    if (nav?.classList.contains('active') && !nav.contains(e.target) && !btn?.contains(e.target)) {
+    if (drawer?.classList.contains('active') && !drawer.contains(e.target) && !btn?.contains(e.target)) {
       toggleMenu(false);
     }
   });
