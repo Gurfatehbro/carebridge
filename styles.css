@@ -3054,3 +3054,30 @@ html[dir="rtl"] .main-nav.active {
   left: 0;
   right: auto;
 }
+
+/* ==========================================================================
+   GOOGLE TRANSLATE BANNER OVERRIDE & CLEANUP
+   ========================================================================== */
+
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+}
+
+body {
+  top: 0px !important;
+  position: static !important;
+}
+
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
+

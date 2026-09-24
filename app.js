@@ -355,6 +355,35 @@ const TRANSLATIONS = {
     footer_heading_specialties: 'Top Specialties',
     footer_heading_patients: 'International Patients'
   },
+  hi: {
+    top_badge: '24/7 अंतरराष्ट्रीय सहायता डेस्क',
+    top_helpline: 'आपातकालीन / हेल्पलाइन: +91 8585931010',
+    top_location: 'दिल्ली एनसीआर सेंट्रल हब (इंदिरा गांधी एयरपोर्ट सहायता)',
+    top_call_btn: 'कॉल करें: 8585931010',
+    call_helpline: 'कॉल डेस्क: +91 8585931010',
+    nav_specialties: 'विशेषताएं',
+    nav_hospitals: 'दिल्ली के अस्पताल',
+    nav_doctors: 'प्रसिद्ध डॉक्टर्स',
+    nav_calculator: 'खर्च कैलकुलेटर',
+    nav_concierge: 'अंतरराष्ट्रीय सेवाएं',
+    nav_journey: 'मरीज की यात्रा',
+    nav_testimonials: 'सफलता की कहानियां',
+    btn_second_opinion: 'मुफ्त दूसरी राय',
+    btn_get_estimate: 'मुफ्त खर्च का अनुमान',
+    hero_title: 'दिल्ली एनसीआर में विश्वस्तरीय चिकित्सा सुविधा.<br>सर्जरी पर <span class="highlight-pill">70–80%</span> तक बचत करें।',
+    hero_desc: 'विदेशी मरीजों को दिल्ली के शीर्ष सुपर-स्पेशियलिटी अस्पतालों (अपोलो, मैक्स, फोर्टिस, मेदांता, बीएलके-मैक्स, सर गंगा राम) और अंतरराष्ट्रीय सर्जनों से जोड़ना। शून्य प्रतीक्षा सूची, 100% मुफ्त परामर्श और संपूर्ण सहायता।',
+    cta_badge: '24 घंटे में त्वरित समीक्षा',
+    cta_title: 'दिल्ली से अपना मुफ्त इलाज प्लान और खर्च का अनुमान प्राप्त करें',
+    cta_desc: 'अपनी मेडिकल रिपोर्ट्स अभी अपलोड करें या हमारे 24/7 अंतरराष्ट्रीय समन्वयक से +91 8585931010 पर बात करें।',
+    cta_btn_quote: 'मुफ्त अस्पताल कोट्स प्राप्त करें',
+    cta_call_btn: 'कॉल करें: 8585931010',
+    dock_free_opinion: 'मुफ्त राय',
+    form_label_phone: 'मोबाइल / फोन नंबर *',
+    footer_about: 'विश्वभर के मरीजों को दिल्ली एनसीआर के प्रतिष्ठित JCI और NABH प्रमाणित अस्पतालों और प्रसिद्ध डॉक्टरों से जोड़ना। गुणवत्ता, लागत पारदर्शिता और संपूर्ण सहायता।',
+    footer_heading_hospitals: 'दिल्ली के शीर्ष अस्पताल',
+    footer_heading_specialties: 'प्रमुख विशेषताएं',
+    footer_heading_patients: 'अंतरराष्ट्रीय मरीज'
+  },
   ar: {
     top_badge: 'مكتب المرضى الدوليين 24/7',
     top_helpline: 'خط المساعدة والطوارئ: 8585931010 91+',
@@ -520,10 +549,54 @@ function initLanguageSelector() {
     mobileLangSelect.addEventListener('change', (e) => handleLangChange(e.target.value));
   }
 
+  // Protect labels initially
+  protectLanguageLabels();
+
+  // Watch for any Google Translate DOM alterations to guarantee labels stay intact
+  const selects = [document.getElementById('languageSelect'), document.getElementById('mobileLanguageSelect')].filter(Boolean);
+  selects.forEach(sel => {
+    const observer = new MutationObserver(() => protectLanguageLabels());
+    observer.observe(sel, { childList: true, subtree: true, characterData: true });
+  });
+
   // Apply on initial load if saved language is not default English
   if (currentLanguage && currentLanguage !== 'en') {
     applyLanguage(currentLanguage, false);
   }
+}
+
+const CANONICAL_LANGUAGES = {
+  en: 'English',
+  hi: 'हिन्दी (Hindi)',
+  ar: 'العربية (Arabic)',
+  ru: 'Русский (Russian)',
+  uz: "O'zbek tili (Uzbek)",
+  bn: 'বাংলা (Bengali)',
+  fr: 'Français (French)',
+  sw: 'Kiswahili (Swahili)',
+  fa: 'فارسی (Persian)',
+  ur: 'اردو (Urdu)',
+  ps: 'پښتو (Pashto)',
+  es: 'Español (Spanish)',
+  de: 'Deutsch (German)',
+  tr: 'Türkçe (Turkish)',
+  id: 'Bahasa Indonesia',
+  vi: 'Tiếng Việt (Vietnamese)',
+  my: 'မြန်မာ (Burmese)',
+  am: 'አማርኛ (Amharic)',
+  so: 'Soomaali (Somali)'
+};
+
+function protectLanguageLabels() {
+  ['languageSelect', 'mobileLanguageSelect'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    Array.from(el.options).forEach(opt => {
+      if (CANONICAL_LANGUAGES[opt.value]) {
+        opt.textContent = CANONICAL_LANGUAGES[opt.value];
+      }
+    });
+  });
 }
 
 function setLanguage(lang) {
@@ -537,16 +610,15 @@ function setLanguage(lang) {
   if (mobileLangSelect) mobileLangSelect.value = lang;
 
   applyLanguage(lang, true);
+  protectLanguageLabels();
 }
 
 function applyLanguage(lang, showNotification = true) {
-  // 1. Set HTML dir and lang attributes
+  // 1. Set HTML dir and lang attributes (RTL for Arabic, Persian, Urdu, Pashto)
+  const RTL_LANGUAGES = ['ar', 'fa', 'ur', 'ps'];
+  const isRTL = RTL_LANGUAGES.includes(lang);
   document.documentElement.lang = lang;
-  if (lang === 'ar') {
-    document.documentElement.setAttribute('dir', 'rtl');
-  } else {
-    document.documentElement.setAttribute('dir', 'ltr');
-  }
+  document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
 
   // 2. Apply dictionary translations to all [data-i18n] elements
   const elements = document.querySelectorAll('[data-i18n]');
@@ -559,40 +631,61 @@ function applyLanguage(lang, showNotification = true) {
     }
   });
 
-  // 3. Trigger Google Translate for deep document translation if available
+  // 3. Trigger Google Translate for deep document translation
   try {
     document.cookie = `googtrans=/en/${lang}; path=/;`;
     if (window.location.hostname) {
       document.cookie = `googtrans=/en/${lang}; domain=${window.location.hostname}; path=/;`;
+      document.cookie = `googtrans=/en/${lang}; domain=.${window.location.hostname}; path=/;`;
     }
-    const gtCombo = document.querySelector('.goog-te-combo');
-    if (gtCombo) {
-      gtCombo.value = lang;
-      gtCombo.dispatchEvent(new Event('change'));
+
+    const triggerCombo = () => {
+      const gtCombo = document.querySelector('.goog-te-combo');
+      if (gtCombo) {
+        if (gtCombo.value !== lang) {
+          gtCombo.value = lang;
+          gtCombo.dispatchEvent(new Event('change'));
+        }
+        return true;
+      }
+      return false;
+    };
+
+    if (!triggerCombo()) {
+      let retries = 0;
+      const interval = setInterval(() => {
+        retries++;
+        if (triggerCombo() || retries > 12) {
+          clearInterval(interval);
+          protectLanguageLabels();
+        }
+      }, 250);
     }
   } catch (err) {
     console.warn('Google Translate sync:', err);
   }
 
+  // Ensure labels stay protected
+  protectLanguageLabels();
+
   // 4. Toast notification
   if (showNotification) {
-    const langNames = {
-      en: 'English',
-      ar: 'العربية (Arabic)',
-      ru: 'Русский (Russian)',
-      fr: 'Français (French)',
-      sw: 'Kiswahili',
-      bn: 'বাংলা (Bengali)'
-    };
     const toastMsgs = {
       en: 'Language switched to English',
+      hi: 'भाषा बदलकर हिन्दी कर दी गई है',
       ar: 'تم تحويل لغة الموقع إلى العربية بنجاح',
       ru: 'Язык успешно переключен на Русский',
+      uz: 'Til O\'zbek tiliga o\'zgartirildi',
       fr: 'Langue changée en Français avec succès',
       sw: 'Lugha imebadilishwa kuwa Kiswahili',
-      bn: 'ভাষা সফলভাবে বাংলায় পরিবর্তন করা হয়েছে'
+      bn: 'ভাষা সফলভাবে বাংলায় পরিবর্তন করা হয়েছে',
+      fa: 'زبان با موفقیت به فارسی تغییر یافت',
+      ur: 'زبان کامیابی سے اردو میں تبدیل ہو گئی ہے',
+      es: 'Idioma cambiado a Español',
+      de: 'Sprache auf Deutsch umgestellt',
+      tr: 'Dil Türkçe olarak değiştirildi'
     };
-    showToast(toastMsgs[lang] || `Language set to ${langNames[lang] || lang}`);
+    showToast(toastMsgs[lang] || `Language switched to ${CANONICAL_LANGUAGES[lang] || lang}`);
   }
 }
 

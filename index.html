@@ -45,17 +45,30 @@
           </select>
         </div>
 
-        <!-- Language Selector -->
-        <div class="control-item">
+        <!-- Language Selector (Protected from translation so names remain clear) -->
+        <div class="control-item notranslate" translate="no">
           <label for="languageSelect" class="sr-only">Language</label>
-          <span class="control-icon">🌐</span>
-          <select id="languageSelect" aria-label="Select Language">
-            <option value="en" selected>English</option>
-            <option value="ar">العربية (Arabic)</option>
-            <option value="ru">Русский (Russian)</option>
-            <option value="fr">Français (French)</option>
-            <option value="sw">Kiswahili</option>
-            <option value="bn">বাংলা (Bengali)</option>
+          <span class="control-icon notranslate" translate="no">🌐</span>
+          <select id="languageSelect" class="notranslate" translate="no" aria-label="Select Language">
+            <option value="en" selected class="notranslate" translate="no">English</option>
+            <option value="hi" class="notranslate" translate="no">हिन्दी (Hindi)</option>
+            <option value="ar" class="notranslate" translate="no">العربية (Arabic)</option>
+            <option value="ru" class="notranslate" translate="no">Русский (Russian)</option>
+            <option value="uz" class="notranslate" translate="no">O'zbek tili (Uzbek)</option>
+            <option value="bn" class="notranslate" translate="no">বাংলা (Bengali)</option>
+            <option value="fr" class="notranslate" translate="no">Français (French)</option>
+            <option value="sw" class="notranslate" translate="no">Kiswahili (Swahili)</option>
+            <option value="fa" class="notranslate" translate="no">فارسی (Persian)</option>
+            <option value="ur" class="notranslate" translate="no">اردو (Urdu)</option>
+            <option value="ps" class="notranslate" translate="no">پښتو (Pashto)</option>
+            <option value="es" class="notranslate" translate="no">Español (Spanish)</option>
+            <option value="de" class="notranslate" translate="no">Deutsch (German)</option>
+            <option value="tr" class="notranslate" translate="no">Türkçe (Turkish)</option>
+            <option value="id" class="notranslate" translate="no">Bahasa Indonesia</option>
+            <option value="vi" class="notranslate" translate="no">Tiếng Việt (Vietnamese)</option>
+            <option value="my" class="notranslate" translate="no">မြန်မာ (Burmese)</option>
+            <option value="am" class="notranslate" translate="no">አማርኛ (Amharic)</option>
+            <option value="so" class="notranslate" translate="no">Soomaali (Somali)</option>
           </select>
         </div>
 
@@ -109,15 +122,28 @@
             <span data-i18n="btn_second_opinion">Free 2nd Opinion</span>
           </button>
           <div class="mobile-select-grid">
-            <div class="mobile-select-item">
-              <span>🌐</span>
-              <select id="mobileLanguageSelect" aria-label="Select Language">
-                <option value="en" selected>English</option>
-                <option value="ar">العربية (Arabic)</option>
-                <option value="ru">Русский (Russian)</option>
-                <option value="fr">Français (French)</option>
-                <option value="sw">Kiswahili</option>
-                <option value="bn">বাংলা (Bengali)</option>
+            <div class="mobile-select-item notranslate" translate="no">
+              <span class="notranslate" translate="no">🌐</span>
+              <select id="mobileLanguageSelect" class="notranslate" translate="no" aria-label="Select Language">
+                <option value="en" selected class="notranslate" translate="no">English</option>
+                <option value="hi" class="notranslate" translate="no">हिन्दी (Hindi)</option>
+                <option value="ar" class="notranslate" translate="no">العربية (Arabic)</option>
+                <option value="ru" class="notranslate" translate="no">Русский (Russian)</option>
+                <option value="uz" class="notranslate" translate="no">O'zbek tili (Uzbek)</option>
+                <option value="bn" class="notranslate" translate="no">বাংলা (Bengali)</option>
+                <option value="fr" class="notranslate" translate="no">Français (French)</option>
+                <option value="sw" class="notranslate" translate="no">Kiswahili (Swahili)</option>
+                <option value="fa" class="notranslate" translate="no">فارسی (Persian)</option>
+                <option value="ur" class="notranslate" translate="no">اردو (Urdu)</option>
+                <option value="ps" class="notranslate" translate="no">پښتو (Pashto)</option>
+                <option value="es" class="notranslate" translate="no">Español (Spanish)</option>
+                <option value="de" class="notranslate" translate="no">Deutsch (German)</option>
+                <option value="tr" class="notranslate" translate="no">Türkçe (Turkish)</option>
+                <option value="id" class="notranslate" translate="no">Bahasa Indonesia</option>
+                <option value="vi" class="notranslate" translate="no">Tiếng Việt (Vietnamese)</option>
+                <option value="my" class="notranslate" translate="no">မြန်မာ (Burmese)</option>
+                <option value="am" class="notranslate" translate="no">አማርኛ (Amharic)</option>
+                <option value="so" class="notranslate" translate="no">Soomaali (Somali)</option>
               </select>
             </div>
             <div class="mobile-select-item">
@@ -1790,13 +1816,12 @@
   <div class="toast-container" id="toastContainer"></div>
 
   <!-- GOOGLE TRANSLATE ENGINE (Hidden integration for full page translation) -->
-  <div id="google_translate_element" style="display:none !important;"></div>
+  <div id="google_translate_element" style="display:none !important;" class="notranslate" translate="no"></div>
   <script type="text/javascript">
     function googleTranslateElementInit() {
       if (window.google && window.google.translate) {
         new window.google.translate.TranslateElement({
           pageLanguage: 'en',
-          includedLanguages: 'en,ar,ru,fr,sw,bn',
           autoDisplay: false
         }, 'google_translate_element');
       }
