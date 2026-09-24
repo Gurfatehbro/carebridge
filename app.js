@@ -294,6 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHospitalFilters();
   initDoctorFilters();
   initCurrencySelector();
+  initLanguageSelector();
   initTabSwitchers();
 });
 
@@ -316,6 +317,283 @@ function formatCost(valUSD) {
   const config = EXCHANGE_RATES[currentCurrency] || EXCHANGE_RATES.USD;
   const converted = Math.round(valUSD * config.rate);
   return `${config.symbol}${converted.toLocaleString()}`;
+}
+
+// ==========================================
+// 3B. MULTILINGUAL TRANSLATION ENGINE (i18n)
+// ==========================================
+
+let currentLanguage = localStorage.getItem('carebridge_language') || 'en';
+
+const TRANSLATIONS = {
+  en: {
+    top_badge: '24/7 International Desk',
+    top_helpline: 'Emergency / Helpline: +91 8585931010',
+    top_location: 'Delhi NCR Central Hub (Indira Gandhi Int\'l Airport Concierge)',
+    top_call_btn: 'Call: 8585931010',
+    call_helpline: 'Call Desk: +91 8585931010',
+    nav_specialties: 'Specialties',
+    nav_hospitals: 'Delhi Hospitals',
+    nav_doctors: 'Renowned Doctors',
+    nav_calculator: 'Cost Calculator',
+    nav_concierge: 'International Concierge',
+    nav_journey: 'Patient Journey',
+    nav_testimonials: 'Success Stories',
+    btn_second_opinion: 'Free 2nd Opinion',
+    btn_get_estimate: 'Get Free Estimate',
+    hero_title: 'World-Class Medical Care in <span class="gradient-text">Delhi NCR</span>.<br>Save Up to <span class="highlight-pill">70–80%</span> on Surgeries.',
+    hero_desc: 'Seamless medical tourism bridging global patients to <strong>Delhi\'s top super-specialty hospitals</strong> (Apollo, Max, Fortis, Medanta, BLK-Max, Sir Ganga Ram) & internationally accredited surgeons. Zero waiting list, 100% free consultation & complete concierge service.',
+    cta_badge: 'Fast 24-Hour Assessment',
+    cta_title: 'Receive Your Free Delhi Treatment Plan & Quote',
+    cta_desc: 'Upload your medical reports now or call our 24/7 international patient coordinator directly at +91 8585931010.',
+    cta_btn_quote: 'Get Free Hospital Quotes',
+    cta_call_btn: 'Call: 8585931010',
+    dock_free_opinion: 'Free Opinion',
+    form_label_phone: 'Mobile / Phone Number *',
+    footer_about: 'Connecting patients globally to Delhi NCR\'s most prestigious JCI and NABH accredited hospitals and world-renowned doctors. Providing uncompromised quality, cost clarity, and end-to-end concierge services.',
+    footer_heading_hospitals: 'Top Delhi Hospitals',
+    footer_heading_specialties: 'Top Specialties',
+    footer_heading_patients: 'International Patients'
+  },
+  ar: {
+    top_badge: 'مكتب المرضى الدوليين 24/7',
+    top_helpline: 'خط المساعدة والطوارئ: 8585931010 91+',
+    top_location: 'مركز دلهي الطبي (خدمة استقبال مطار إنديرا غاندي الدولي)',
+    top_call_btn: 'اتصل: 8585931010',
+    call_helpline: 'اتصل بالمكتب: 8585931010 91+',
+    nav_specialties: 'التخصصات الطبية',
+    nav_hospitals: 'مستشفيات دلهي',
+    nav_doctors: 'أشهر الأطباء',
+    nav_calculator: 'حاسبة التكاليف',
+    nav_concierge: 'الخدمات الدولية',
+    nav_journey: 'رحلة العلاج',
+    nav_testimonials: 'قصص النجاح',
+    btn_second_opinion: 'رأي طبي ثانٍ مجاناً',
+    btn_get_estimate: 'احصل على تقدير مجاني',
+    hero_title: 'رعاية طبية عالمية المستوى في <span class="gradient-text">دلهي</span>.<br>وفّر حتى <span class="highlight-pill">70–80%</span> من تكاليف الجراحة.',
+    hero_desc: 'ربط المرضى الدوليين بأرقى مستشفيات دلهي المعتمدة دولياً (أبولو، ماكس، فورتيس، ميدانتا، بي إل كيه، وسير جانجا رام) وجراحين عالميين. بدون قوائم انتظار، استشارة مجانية 100% وخدمة كونسيرج متكاملة.',
+    cta_badge: 'تقييم فوري خلال 24 ساعة',
+    cta_title: 'احصل على خطة علاج وتقدير تكلفة مجاناً من دلهي',
+    cta_desc: 'أرسل تقاريرك الطبية الآن أو اتصل بمنسق المرضى الدوليين مباشرة على 8585931010 91+.',
+    cta_btn_quote: 'طلب عروض أسعار المستشفيات مجاناً',
+    cta_call_btn: 'اتصل: 8585931010',
+    dock_free_opinion: 'استشارة مجانية',
+    form_label_phone: 'رقم الهاتف / الجوال *',
+    footer_about: 'ربط المرضى حول العالم بأعرق مستشفيات دلهي المعتمدة دولياً من JCI وNABH ونخبة الأطباء العالميين. جودة لا تضاهى، وضوح تام في التكاليف، وخدمات استقبال ومرافقة متكاملة.',
+    footer_heading_hospitals: 'أفضل مستشفيات دلهي',
+    footer_heading_specialties: 'أهم التخصصات الجراحية',
+    footer_heading_patients: 'المرضى الدوليين'
+  },
+  ru: {
+    top_badge: 'Круглосуточный международный отдел',
+    top_helpline: 'Горячая линия: +91 8585931010',
+    top_location: 'Главный хаб Дели (консьерж-сервис в аэропорту им. Индиры Ганди)',
+    top_call_btn: 'Тел: 8585931010',
+    call_helpline: 'Позвонить: +91 8585931010',
+    nav_specialties: 'Специальности',
+    nav_hospitals: 'Больницы Дели',
+    nav_doctors: 'Ведущие врачи',
+    nav_calculator: 'Калькулятор цен',
+    nav_concierge: 'Международный сервис',
+    nav_journey: 'Этапы лечения',
+    nav_testimonials: 'Отзывы пациентов',
+    btn_second_opinion: 'Второе мнение бесплатно',
+    btn_get_estimate: 'Получить расчет',
+    hero_title: 'Медицинская помощь мирового уровня в <span class="gradient-text">Дели</span>.<br>Экономьте до <span class="highlight-pill">70–80%</span> на операциях.',
+    hero_desc: 'Организация лечения для иностранных пациентов в лучших клиниках Дели (Apollo, Max, Fortis, Medanta, BLK-Max, Sir Ganga Ram). Без очередей, 100% бесплатные консультации и полное сопровождение.',
+    cta_badge: 'Оценка состояния за 24 часа',
+    cta_title: 'Получите бесплатный план лечения и расчет стоимости',
+    cta_desc: 'Отправьте медицинские выписки или позвоните координатору по номеру +91 8585931010.',
+    cta_btn_quote: 'Получить расчет от больниц',
+    cta_call_btn: 'Позвонить: 8585931010',
+    dock_free_opinion: 'Бесплатное мнение',
+    form_label_phone: 'Номер телефона / мобильного *',
+    footer_about: 'Соединяем пациентов со всего мира с аккредитованными клиниками Дели (JCI, NABH) и ведущими профессорами. Гарантия качества, прозрачные цены и полное сопровождение.',
+    footer_heading_hospitals: 'Лучшие больницы Дели',
+    footer_heading_specialties: 'Основные направления',
+    footer_heading_patients: 'Иностранным пациентам'
+  },
+  fr: {
+    top_badge: 'Bureau International 24/7',
+    top_helpline: 'Ligne d\'urgence: +91 8585931010',
+    top_location: 'Centre de Delhi (Conciergerie à l\'aéroport Indira Gandhi)',
+    top_call_btn: 'Appel: 8585931010',
+    call_helpline: 'Appeler: +91 8585931010',
+    nav_specialties: 'Spécialités',
+    nav_hospitals: 'Hôpitaux de Delhi',
+    nav_doctors: 'Médecins renommés',
+    nav_calculator: 'Calculateur de coût',
+    nav_concierge: 'Conciergerie internationale',
+    nav_journey: 'Parcours patient',
+    nav_testimonials: 'Témoignages',
+    btn_second_opinion: '2ème Avis Gratuit',
+    btn_get_estimate: 'Obtenir un devis',
+    hero_title: 'Soins médicaux d\'excellence à <span class="gradient-text">Delhi</span>.<br>Économisez jusqu\'à <span class="highlight-pill">70 à 80%</span> sur les chirurgies.',
+    hero_desc: 'Tourisme médical de premier ordre reliant les patients aux meilleurs hôpitaux de Delhi (Apollo, Max, Fortis, Medanta, BLK-Max, Sir Ganga Ram). Sans liste d\'attente, consultation 100% gratuite et conciergerie complète.',
+    cta_badge: 'Évaluation rapide en 24h',
+    cta_title: 'Recevez votre plan de traitement et devis gratuit à Delhi',
+    cta_desc: 'Téléchargez vos rapports médicaux ou appelez notre coordinateur 24/7 au +91 8585931010.',
+    cta_btn_quote: 'Obtenir les devis des hôpitaux',
+    cta_call_btn: 'Appel: 8585931010',
+    dock_free_opinion: 'Avis Gratuit',
+    form_label_phone: 'Numéro de téléphone portable *',
+    footer_about: 'Mise en relation des patients du monde entier avec les hôpitaux accrédités JCI et NABH de Delhi et des médecins de renommée mondiale. Qualité sans compromis et transparence des coûts.',
+    footer_heading_hospitals: 'Meilleurs hôpitaux de Delhi',
+    footer_heading_specialties: 'Spécialités majeures',
+    footer_heading_patients: 'Patients internationaux'
+  },
+  sw: {
+    top_badge: 'Dawati la Kimataifa 24/7',
+    top_helpline: 'Nambari ya Dharura: +91 8585931010',
+    top_location: 'Kituo cha Delhi (Huduma ya Uwanja wa Ndege wa Indira Gandhi)',
+    top_call_btn: 'Piga: 8585931010',
+    call_helpline: 'Piga Simu: +91 8585931010',
+    nav_specialties: 'Ubingwa wa Matibabu',
+    nav_hospitals: 'Hospitali za Delhi',
+    nav_doctors: 'Madaktari Maarufu',
+    nav_calculator: 'Kikokotoo cha Gharama',
+    nav_concierge: 'Huduma za Kimataifa',
+    nav_journey: 'Safari ya Mgonjwa',
+    nav_testimonials: 'Ushuhuda wa Wagonjwa',
+    btn_second_opinion: 'Maoni ya Pili Bure',
+    btn_get_estimate: 'Pata Makadirio Bure',
+    hero_title: 'Huduma za Kimatibabu za Kiwango cha Juu <span class="gradient-text">Delhi</span>.<br>Okoa Hadi <span class="highlight-pill">70–80%</span> kwa Upasuaji.',
+    hero_desc: 'Daraja la utalii wa kimatibabu linalounganisha wagonjwa na hospitali bora za Delhi (Apollo, Max, Fortis, Medanta, BLK, Ganga Ram). Hakuna foleni, mashauriano 100% bure na huduma kamili.',
+    cta_badge: 'Tathmini ya Haraka ya Saa 24',
+    cta_title: 'Pata Mpango na Makadirio Yako ya Matibabu Bure',
+    cta_desc: 'Tuma ripoti zako za matibabu sasa au piga simu kwa mratibu wetu kwa +91 8585931010.',
+    cta_btn_quote: 'Pata Makadirio ya Hospitali Bure',
+    cta_call_btn: 'Piga: 8585931010',
+    dock_free_opinion: 'Maoni Bure',
+    form_label_phone: 'Nambari ya Simu ya Mkononi *',
+    footer_about: 'Kuunganisha wagonjwa kote ulimwenguni na hospitali zilizoidhinishwa za JCI na NABH za Delhi na madaktari maarufu duniani. Ubora usio na kifani na uwazi wa gharama.',
+    footer_heading_hospitals: 'Hospitali Bora za Delhi',
+    footer_heading_specialties: 'Taaluma Kuu za Matibabu',
+    footer_heading_patients: 'Wagonjwa wa Kimataifa'
+  },
+  bn: {
+    top_badge: '২৪/৭ আন্তর্জাতিক হেল্পডেস্ক',
+    top_helpline: 'জরুরি হেল্পলাইন: +91 8585931010',
+    top_location: 'দিল্লি প্রধান কেন্দ্র (ইন্দিরা গান্ধী বিমানবন্দর সহায়তা)',
+    top_call_btn: 'কল করুন: 8585931010',
+    call_helpline: 'কল করুন: +91 8585931010',
+    nav_specialties: 'চিকিৎসা বিভাগ',
+    nav_hospitals: 'দিল্লির হাসপাতাল',
+    nav_doctors: 'বিশিষ্ট ডাক্তারগণ',
+    nav_calculator: 'খরচ ক্যালকুলেটর',
+    nav_concierge: 'আন্তর্জাতিক সেবা',
+    nav_journey: 'রোগীর পথচলা',
+    nav_testimonials: 'সাফল্যের গল্প',
+    btn_second_opinion: 'ফ্রি দ্বিতীয় মতামত',
+    btn_get_estimate: 'ফ্রি খরচের হিসাব নিন',
+    hero_title: '<span class="gradient-text">দিল্লি এনসিআর</span>-এ বিশ্বমানের চিকিৎসা সেবা।<br>অস্ত্রোপচারে <span class="highlight-pill">৭০–৮০%</span> পর্যন্ত সাশ্রয় করুন।',
+    hero_desc: 'আন্তর্জাতিক রোগীদের দিল্লির শীর্ষস্থানীয় সুপার-স্পেশালিটি হাসপাতাল (অ্যাপোলো, ম্যাক্স, ফোর্টিস, মেদান্ত, বিএলকে-ম্যাক্স, স্যার গঙ্গা রাম) এবং বিশ্বখ্যাত সার্জনদের সাথে যুক্ত করা। কোনও অপেক্ষার তালিকা নেই, ১০০% ফ্রি পরামর্শ এবং সম্পূর্ণ সহায়তা।',
+    cta_badge: '২৪ ঘণ্টার মধ্যে পর্যালোচনা',
+    cta_title: 'দিল্লি থেকে আপনার ফ্রি চিকিৎসা পরিকল্পনা ও খরচের হিসাব পান',
+    cta_desc: 'আপনার মেডিকেল রিপোর্ট আপলোড করুন বা সরাসরি আমাদের হেল্পলাইনে কল করুন +91 8585931010।',
+    cta_btn_quote: 'হাসপাতালের ফ্রি খরচের হিসাব নিন',
+    cta_call_btn: 'কল করুন: 8585931010',
+    dock_free_opinion: 'ফ্রি মতামত',
+    form_label_phone: 'মোবাইল / ফোন নম্বর *',
+    footer_about: 'বিশ্বজুড়ে রোগীদের দিল্লির মর্যাদাপূর্ণ জেসিআই এবং এনএবিএইচ স্বীকৃত হাসপাতাল এবং বিশ্বখ্যাত চিকিৎসকদের সাথে সংযুক্ত করা। আপসহীন মান এবং পূর্ণাঙ্গ সহায়তা।',
+    footer_heading_hospitals: 'দিল্লির শীর্ষ হাসপাতাল',
+    footer_heading_specialties: 'প্রধান চিকিৎসা বিভাগ',
+    footer_heading_patients: 'আন্তর্জাতিক রোগী'
+  }
+};
+
+function initLanguageSelector() {
+  const langSelect = document.getElementById('languageSelect');
+  const mobileLangSelect = document.getElementById('mobileLanguageSelect');
+
+  const handleLangChange = (lang) => {
+    setLanguage(lang);
+  };
+
+  if (langSelect) {
+    langSelect.value = currentLanguage;
+    langSelect.addEventListener('change', (e) => handleLangChange(e.target.value));
+  }
+
+  if (mobileLangSelect) {
+    mobileLangSelect.value = currentLanguage;
+    mobileLangSelect.addEventListener('change', (e) => handleLangChange(e.target.value));
+  }
+
+  // Apply on initial load if saved language is not default English
+  if (currentLanguage && currentLanguage !== 'en') {
+    applyLanguage(currentLanguage, false);
+  }
+}
+
+function setLanguage(lang) {
+  currentLanguage = lang;
+  localStorage.setItem('carebridge_language', lang);
+
+  // Sync both dropdowns
+  const langSelect = document.getElementById('languageSelect');
+  const mobileLangSelect = document.getElementById('mobileLanguageSelect');
+  if (langSelect) langSelect.value = lang;
+  if (mobileLangSelect) mobileLangSelect.value = lang;
+
+  applyLanguage(lang, true);
+}
+
+function applyLanguage(lang, showNotification = true) {
+  // 1. Set HTML dir and lang attributes
+  document.documentElement.lang = lang;
+  if (lang === 'ar') {
+    document.documentElement.setAttribute('dir', 'rtl');
+  } else {
+    document.documentElement.setAttribute('dir', 'ltr');
+  }
+
+  // 2. Apply dictionary translations to all [data-i18n] elements
+  const elements = document.querySelectorAll('[data-i18n]');
+  elements.forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) {
+      el.innerHTML = TRANSLATIONS[lang][key];
+    } else if (TRANSLATIONS.en && TRANSLATIONS.en[key]) {
+      el.innerHTML = TRANSLATIONS.en[key];
+    }
+  });
+
+  // 3. Trigger Google Translate for deep document translation if available
+  try {
+    document.cookie = `googtrans=/en/${lang}; path=/;`;
+    if (window.location.hostname) {
+      document.cookie = `googtrans=/en/${lang}; domain=${window.location.hostname}; path=/;`;
+    }
+    const gtCombo = document.querySelector('.goog-te-combo');
+    if (gtCombo) {
+      gtCombo.value = lang;
+      gtCombo.dispatchEvent(new Event('change'));
+    }
+  } catch (err) {
+    console.warn('Google Translate sync:', err);
+  }
+
+  // 4. Toast notification
+  if (showNotification) {
+    const langNames = {
+      en: 'English',
+      ar: 'العربية (Arabic)',
+      ru: 'Русский (Russian)',
+      fr: 'Français (French)',
+      sw: 'Kiswahili',
+      bn: 'বাংলা (Bengali)'
+    };
+    const toastMsgs = {
+      en: 'Language switched to English',
+      ar: 'تم تحويل لغة الموقع إلى العربية بنجاح',
+      ru: 'Язык успешно переключен на Русский',
+      fr: 'Langue changée en Français avec succès',
+      sw: 'Lugha imebadilishwa kuwa Kiswahili',
+      bn: 'ভাষা সফলভাবে বাংলায় পরিবর্তন করা হয়েছে'
+    };
+    showToast(toastMsgs[lang] || `Language set to ${langNames[lang] || lang}`);
+  }
 }
 
 // ==========================================
@@ -685,7 +963,7 @@ function submitConsultForm(e) {
   if (listContainer) listContainer.innerHTML = '';
 
   // Show detailed confirmation toast
-  showToast(`Thank you, ${name}! Your reports have been forwarded to Delhi Chief Specialists. A dedicated medical coordinator will connect with you via WhatsApp in < 2 hours.`);
+  showToast(`Thank you, ${name}! Your reports have been forwarded to Delhi Chief Specialists. A dedicated medical coordinator will connect with you at your phone number in < 2 hours.`);
 }
 
 // ==========================================
@@ -706,18 +984,58 @@ function initStickyHeader() {
 function initMobileMenu() {
   const btn = document.getElementById('mobileMenuBtn');
   const nav = document.getElementById('mainNav');
+  const closeBtn = document.getElementById('mobileNavClose');
 
-  btn?.addEventListener('click', () => {
-    nav?.classList.toggle('active');
+  const toggleMenu = (open) => {
+    const shouldOpen = typeof open === 'boolean' ? open : !nav?.classList.contains('active');
+    if (shouldOpen) {
+      nav?.classList.add('active');
+      btn?.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    } else {
+      nav?.classList.remove('active');
+      btn?.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  };
+
+  btn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  closeBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu(false);
   });
 
   // Close on nav link click
   const navLinks = document.querySelectorAll('.nav-link');
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
-      nav?.classList.remove('active');
+      toggleMenu(false);
     });
   });
+
+  // Close when clicking outside drawer
+  document.addEventListener('click', (e) => {
+    if (nav?.classList.contains('active') && !nav.contains(e.target) && !btn?.contains(e.target)) {
+      toggleMenu(false);
+    }
+  });
+
+  // Sync mobile currency select with desktop currency select
+  const mobileCurrency = document.getElementById('mobileCurrencySelect');
+  const desktopCurrency = document.getElementById('currencySelect');
+  if (mobileCurrency && desktopCurrency) {
+    mobileCurrency.value = currentCurrency;
+    mobileCurrency.addEventListener('change', (e) => {
+      desktopCurrency.value = e.target.value;
+      currentCurrency = e.target.value;
+      updateCostComparison();
+      showToast(`Currency switched to ${currentCurrency}`);
+    });
+  }
 }
 
 // ==========================================
