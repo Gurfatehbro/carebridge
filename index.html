@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareBridge HealthCare | Delhi's Premier Medical Tourism & Super Specialty Hospitals</title>
+  <meta name="description" content="CareBridge HealthCare connects international patients with top JCI & NABH accredited hospitals and renowned surgeons in Delhi NCR. Get free medical opinion, treatment cost estimates, and full concierge support.">
+  <meta name="keywords" content="Medical Tourism Delhi, Best Hospitals in Delhi, Apollo Hospital Delhi, Max Healthcare Saket, Fortis Escorts, Medanta, BLK Max, Cancer Treatment India, Heart Surgery Delhi, Medical Visa India">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+</head>
+<body>
+
+  <!-- TOP EMERGENCY & INTERNATIONAL SUPPORT BAR -->
+  <aside class="top-announcement-bar" aria-label="International Support and Emergency Hotline">
+    <div class="container top-bar-content">
+      <div class="top-left-info">
+        <span class="badge-pulse"><span class="pulse-dot"></span> 24/7 International Desk</span>
+        <span class="divider-v">|</span>
+        <a href="tel:+919811002233" class="contact-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          Emergency / Helpline: +91 98110 02233
+        </a>
+        <span class="divider-v hide-mobile">|</span>
+        <span class="location-tag hide-mobile">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          Delhi NCR Central Hub (Indira Gandhi Int'l Airport Concierge)
+        </span>
+      </div>
+
+      <div class="top-right-controls">
+        <!-- Currency Selector -->
+        <div class="control-item">
+          <label for="currencySelect" class="sr-only">Currency</label>
+          <span class="control-icon">💵</span>
+          <select id="currencySelect" aria-label="Select Currency">
+            <option value="USD" selected>USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="AED">AED (د.إ)</option>
+            <option value="GBP">GBP (£)</option>
+            <option value="INR">INR (₹)</option>
+          </select>
+        </div>
+
+        <!-- Language Selector -->
+        <div class="control-item">
+          <label for="languageSelect" class="sr-only">Language</label>
+          <span class="control-icon">🌐</span>
+          <select id="languageSelect" aria-label="Select Language">
+            <option value="en" selected>English</option>
+            <option value="ar">العربية (Arabic)</option>
+            <option value="ru">Русский (Russian)</option>
+            <option value="fr">Français (French)</option>
+            <option value="sw">Kiswahili</option>
+            <option value="bn">বাংলা (Bengali)</option>
+          </select>
+        </div>
+
+        <!-- Direct WhatsApp CTA -->
+        <a href="https://wa.me/919811002233?text=Hello%20CareBridge%2C%20I%20need%20a%20free%20medical%20opinion%20and%20quote" target="_blank" class="top-whatsapp-btn" rel="noopener noreferrer">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          <span>WhatsApp Us</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN NAVIGATION -->
+  <header class="site-header" id="navbar">
+    <div class="container header-container">
+      <a href="#" class="brand-logo" aria-label="CareBridge HealthCare Home">
+        <div class="logo-symbol">
+          <span class="cross">+</span>
+          <div class="orbit"></div>
+        </div>
+        <div class="logo-text">
+          <span class="brand-name">CareBridge</span>
+          <span class="brand-sub">HEALTHCARE DELHI</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="#specialties" class="nav-link">Specialties</a></li>
+          <li><a href="#hospitals" class="nav-link">Delhi Hospitals</a></li>
+          <li><a href="#doctors" class="nav-link">Renowned Doctors</a></li>
+          <li><a href="#calculator" class="nav-link">Cost Calculator</a></li>
+          <li><a href="#concierge" class="nav-link">International Concierge</a></li>
+          <li><a href="#how-it-works" class="nav-link">Patient Journey</a></li>
+          <li><a href="#testimonials" class="nav-link">Success Stories</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-secondary hide-mobile" onclick="openConsultModal('Second Opinion')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          Free 2nd Opinion
+        </button>
+        <button class="btn btn-primary" onclick="openConsultModal('General Inquiry')">
+          <span>Get Free Estimate</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION WITH SMART DISCOVERY ENGINE -->
+  <section class="hero-section" id="home">
+    <div class="hero-bg-glow"></div>
+    <div class="hero-grid-pattern"></div>
+    
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-icon">⭐</span>
+          <span>India's #1 Delhi Hospital Facilitation Network</span>
+          <span class="badge-tag">JCI & NABH Certified</span>
+        </div>
+
+        <h1 class="hero-title">
+          World-Class Medical Care in <span class="gradient-text">Delhi NCR</span>.<br>
+          Save Up to <span class="highlight-pill">70–80%</span> on Surgeries.
+        </h1>
+
+        <p class="hero-description">
+          Seamless medical tourism bridging global patients to <strong>Delhi's top super-specialty hospitals</strong> (Apollo, Max, Fortis, Medanta, BLK-Max, Sir Ganga Ram) & internationally accredited surgeons. 
+          Zero waiting list, 100% free consultation & complete concierge service.
+        </p>
+
+        <!-- Trust Badges Bar -->
+        <div class="trust-strip">
+          <div class="trust-item">
+            <span class="trust-number">45+</span>
+            <span class="trust-label">JCI/NABH Hospitals</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <span class="trust-number">1,250+</span>
+            <span class="trust-label">Super Specialists</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <span class="trust-number">65,000+</span>
+            <span class="trust-label">Global Patients</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <span class="trust-number">99.2%</span>
+            <span class="trust-label">Clinical Success</span>
+          </div>
+        </div>
+
+        <!-- HERO SMART SEARCH INTERACTIVE ENGINE -->
+        <div class="smart-finder-card">
+          <div class="finder-header">
+            <div class="finder-tab active" data-tab="treatment">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              Find By Treatment
+            </div>
+            <div class="finder-tab" data-tab="hospital">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4 8 4v14M9 9h6M9 13h6M9 17h6"/></svg>
+              Explore Hospitals
+            </div>
+            <div class="finder-tab" data-tab="doctor">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Find Specialists
+            </div>
+          </div>
+
+          <form class="finder-form" id="smartFinderForm" onsubmit="handleSmartSearch(event)">
+            <div class="finder-input-group">
+              <label for="searchQuery">Search Condition or Procedure</label>
+              <div class="input-with-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="searchQuery" placeholder="e.g. Heart Bypass, Knee Replacement, CyberKnife, Liver Transplant...">
+              </div>
+            </div>
+
+            <div class="finder-input-group">
+              <label for="specialtySelect">Medical Specialty</label>
+              <div class="input-with-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <select id="specialtySelect">
+                  <option value="all">All Specialties</option>
+                  <option value="cardiology">Cardiology & Cardiac Surgery</option>
+                  <option value="oncology">Oncology (Cancer Care)</option>
+                  <option value="orthopedics">Orthopedics & Joint Replacement</option>
+                  <option value="neurology">Neurology & Neuro-Spine</option>
+                  <option value="transplant">Organ Transplants (Liver/Kidney/BMT)</option>
+                  <option value="ivf">IVF & Fertility Treatment</option>
+                  <option value="bariatric">Bariatric & GI Surgery</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="finder-input-group">
+              <label for="locationFilter">Delhi Region / Hub</label>
+              <div class="input-with-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                <select id="locationFilter">
+                  <option value="all">All Delhi NCR</option>
+                  <option value="south-delhi">South Delhi (Saket, Sarita Vihar)</option>
+                  <option value="central-delhi">Central Delhi (Pusa Rd, Rajinder Ngr)</option>
+                  <option value="west-delhi">West Delhi (Dwarka)</option>
+                  <option value="gurugram">Gurugram / Millennium City</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-search">
+              <span>Search Options</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </form>
+
+          <!-- Quick Trending Tags -->
+          <div class="trending-tags">
+            <span class="tags-label">Popular Procedures:</span>
+            <button class="pill-tag" onclick="quickFilterTag('Cancer')">CyberKnife / Oncology</button>
+            <button class="pill-tag" onclick="quickFilterTag('Heart')">CABG Heart Bypass</button>
+            <button class="pill-tag" onclick="quickFilterTag('Knee')">Robotic Knee Replacement</button>
+            <button class="pill-tag" onclick="quickFilterTag('Liver')">Living Donor Liver Transplant</button>
+            <button class="pill-tag" onclick="quickFilterTag('BMT')">Bone Marrow Transplant</button>
+            <button class="pill-tag" onclick="quickFilterTag('IVF')">IVF & ICSI</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCREDITATIONS & WHY DELHI MARQUEE -->
+  <section class="partners-marquee-section">
+    <div class="container">
+      <div class="marquee-title-wrap">
+        <span class="marquee-badge">Globally Recognized Standards</span>
+        <h3 class="marquee-heading">Partnered with Delhi's JCI, NABH & NABL Accredited Healthcare Leaders</h3>
+      </div>
+      <div class="marquee-scroll-container">
+        <div class="marquee-track">
+          <div class="partner-logo-item">
+            <div class="partner-badge">JCI</div>
+            <span>Joint Commission International</span>
+          </div>
+          <div class="partner-logo-item">
+            <div class="partner-badge">NABH</div>
+            <span>National Accreditation Board</span>
+          </div>
+          <div class="partner-logo-item">
+            <div class="partner-badge">Apollo</div>
+            <span>Indraprastha Apollo Hospitals</span>
+          </div>
+          <div class="partner-logo-item">
+            <div class="partner-badge">Max</div>
+            <span>Max Super Speciality Saket</span>
+          </div>
+          <div class="partner-logo-item">
+            <div class="partner-badge">Fortis</div>
+            <span>Fortis Escorts Heart Institute</span>
+          </div>
+          <div class="partner-logo-item">
+            <div class="partner-badge">Medanta</div>
+            <span>Medanta - The Medicity</span>
+          </div>
+          <div class="partner-logo-item">
+            <div class="partner-badge">BLK-Max</div>
+            <span>BLK-Max Super Speciality</span>
+          </div>
+          <div class="partner-logo-item">
+            <div class="partner-badge">Ganga Ram</div>
+            <span>Sir Ganga Ram Hospital</span>
+          </div>
+          <div class="partner-logo-item">
+            <div class="partner-badge">Manipal</div>
+            <span>Manipal Hospitals Dwarka</span>
+          </div>
+          <!-- Repeat for smooth loop -->
+          <div class="partner-logo-item">
+            <div class="partner-badge">JCI</div>
+            <span>Joint Commission International</span>
+          </div>
+          <div class="partner-logo-item">
+            <div class="partner-badge">Apollo</div>
+            <span>Indraprastha Apollo Hospitals</span>
+          </div>
+          <div class="partner-logo-item">
+            <div class="partner-badge">Max</div>
+            <span>Max Super Speciality Saket</span>
+          </div>
+          <div class="partner-logo-item">
+            <div class="partner-badge">Fortis</div>
+            <span>Fortis Escorts Heart Institute</span>
+          </div>
+          <div class="partner-logo-item">
+            <div class="partner-badge">Medanta</div>
+            <span>Medanta - The Medicity</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY MEDICAL SPECIALTIES GRID -->
+  <section class="section specialties-section" id="specialties">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-heading">Advanced Centers of Excellence</span>
+        <h2 class="section-title">Specialties Driving Global Medical Breakthroughs</h2>
+        <p class="section-subtitle">Delhi's premier hospital networks offer state-of-the-art robotic surgery, precision oncology, organ transplant institutes, and minimally invasive procedures.</p>
+      </div>
+
+      <div class="specialties-grid" id="specialtiesGrid">
+        <!-- Rendered dynamically or enriched statically -->
+        <div class="specialty-card" data-specialty="cardiology" onclick="filterBySpecialty('Cardiology')">
+          <div class="spec-icon-wrap cardio-bg">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </div>
+          <h3 class="spec-title">Cardiology & Heart Surgery</h3>
+          <p class="spec-desc">CABG, TAVI, Robotic Valve Repair, Pediatric Heart Surgeries at Asia's top heart institutes.</p>
+          <ul class="spec-features">
+            <li>✓ 99.4% Bypass Success Rate</li>
+            <li>✓ Minimal Invasive & Hybrid OTs</li>
+            <li>✓ Starting at $4,500</li>
+          </ul>
+          <span class="spec-link">Explore Specialists & Hospitals →</span>
+        </div>
+
+        <div class="specialty-card" data-specialty="oncology" onclick="filterBySpecialty('Oncology')">
+          <div class="spec-icon-wrap onco-bg">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"/></svg>
+          </div>
+          <h3 class="spec-title">Comprehensive Oncology</h3>
+          <p class="spec-desc">CyberKnife VSI, TrueBeam, Da Vinci Xi Robotics, CAR-T Cell Therapy, & Chemotherapy.</p>
+          <ul class="spec-features">
+            <li>✓ Organ-Preserving Surgery</li>
+            <li>✓ Molecular Tumor Boards</li>
+            <li>✓ Save 75% vs Western Clinics</li>
+          </ul>
+          <span class="spec-link">Explore Specialists & Hospitals →</span>
+        </div>
+
+        <div class="specialty-card" data-specialty="orthopedics" onclick="filterBySpecialty('Orthopedics')">
+          <div class="spec-icon-wrap ortho-bg">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M5 7l14 10M19 7 5 17"/></svg>
+          </div>
+          <h3 class="spec-title">Orthopedics & Spine</h3>
+          <p class="spec-desc">Robotic Mako Total Knee/Hip Replacement, Complex Spine Deformity (Scoliosis), Endoscopic Spine.</p>
+          <ul class="spec-features">
+            <li>✓ Day 1 Rapid Walking Rehab</li>
+            <li>✓ High-Flexion Implants</li>
+            <li>✓ Starting at $4,200</li>
+          </ul>
+          <span class="spec-link">Explore Specialists & Hospitals →</span>
+        </div>
+
+        <div class="specialty-card" data-specialty="transplant" onclick="filterBySpecialty('Organ Transplant')">
+          <div class="spec-icon-wrap trans-bg">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21a9 9 0 0 0 9-9c0-4.97-4.03-9-9-9s-9 4.03-9 9a9 9 0 0 0 9 9z"/><path d="M12 7v10M8 12h8"/></svg>
+          </div>
+          <h3 class="spec-title">Organ Transplants & BMT</h3>
+          <p class="spec-desc">Liver, Kidney, and Bone Marrow Transplants with strict legal protocols and zero cross-infection ICUs.</p>
+          <ul class="spec-features">
+            <li>✓ Over 10,000+ Successful Transplants</li>
+            <li>✓ Dedicated Pediatric ICUs</li>
+            <li>✓ Verified Legal Authorization Help</li>
+          </ul>
+          <span class="spec-link">Explore Specialists & Hospitals →</span>
+        </div>
+
+        <div class="specialty-card" data-specialty="neurology" onclick="filterBySpecialty('Neurology')">
+          <div class="spec-icon-wrap neuro-bg">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04z"/></svg>
+          </div>
+          <h3 class="spec-title">Neurology & Brain Surgery</h3>
+          <p class="spec-desc">Deep Brain Stimulation (DBS), Brain Tumor Micro-surgeries, Epilepsy Surgeries, Aneurysm Coiling.</p>
+          <ul class="spec-features">
+            <li>✓ Intra-operative MRI Guidance</li>
+            <li>✓ Biplane Neuro-Cath Labs</li>
+            <li>✓ Starting at $5,500</li>
+          </ul>
+          <span class="spec-link">Explore Specialists & Hospitals →</span>
+        </div>
+
+        <div class="specialty-card" data-specialty="ivf" onclick="filterBySpecialty('IVF')">
+          <div class="spec-icon-wrap ivf-bg">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M3 21v-2a7 7 0 0 1 14 0v2"/><circle cx="19" cy="11" r="3"/><path d="M22 21v-1a4 4 0 0 0-4-4"/></svg>
+          </div>
+          <h3 class="spec-title">IVF & Advanced Fertility</h3>
+          <p class="spec-desc">ICSI, Blastocyst culture, PGT-A genetic screening, Donor programs with high success rates.</p>
+          <ul class="spec-features">
+            <li>✓ 72%+ Cumulative Take-Home Baby Rate</li>
+            <li>✓ Certified Embryology Labs</li>
+            <li>✓ Starting at $2,800 / cycle</li>
+          </ul>
+          <span class="spec-link">Explore Specialists & Hospitals →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE TREATMENT COST CALCULATOR & SAVINGS COMPARATOR -->
+  <section class="section calculator-section" id="calculator">
+    <div class="container">
+      <div class="calculator-wrapper">
+        <div class="calc-info">
+          <span class="sub-heading-light">Cost Transparency</span>
+          <h2 class="calc-title">Compare Treatment Costs & Savings in Delhi</h2>
+          <p class="calc-desc">
+            See how much you save on world-class surgeries performed in Delhi's JCI-accredited hospitals compared to the US, UK, UAE, and Singapore.
+          </p>
+          
+          <div class="cost-highlights">
+            <div class="highlight-box">
+              <span class="hl-value">70% - 85%</span>
+              <span class="hl-text">Average Cost Savings</span>
+            </div>
+            <div class="highlight-box">
+              <span class="hl-value">0 Days</span>
+              <span class="hl-text">Waiting Period</span>
+            </div>
+            <div class="highlight-box">
+              <span class="hl-value">Free</span>
+              <span class="hl-text">Doctor Quote & Plans</span>
+            </div>
+          </div>
+
+          <div class="calc-assurance">
+            <span class="shield-icon">🛡️</span>
+            <span>All estimates include surgeon fees, hospital stay, medications, nursing, pre-op tests & Delhi airport pickup.</span>
+          </div>
+        </div>
+
+        <div class="calc-interactive-card">
+          <h3 class="card-inner-title">Interactive Cost Estimator</h3>
+
+          <div class="calc-field">
+            <label for="calcProcedureSelect">Select Procedure / Surgery</label>
+            <select id="calcProcedureSelect" onchange="updateCostComparison()">
+              <option value="cabg">Heart Bypass Surgery (CABG)</option>
+              <option value="knee">Robotic Total Knee Replacement (Unilateral)</option>
+              <option value="hip">Total Hip Replacement (Bilateral)</option>
+              <option value="liver">Living Donor Liver Transplant</option>
+              <option value="kidney">Kidney Transplant</option>
+              <option value="bmt">Allogeneic Bone Marrow Transplant (BMT)</option>
+              <option value="cyberknife">CyberKnife Radiation (Per Cycle)</option>
+              <option value="ivf">IVF + ICSI (1 Complete Cycle)</option>
+              <option value="spine">Spine Lumbar Fusion (TLIF)</option>
+            </select>
+          </div>
+
+          <!-- Comparison Bars -->
+          <div class="comparison-bars-container">
+            <div class="cost-row usa-row">
+              <div class="cost-meta">
+                <span class="country-name">🇺🇸 USA</span>
+                <span class="cost-val" id="costUSA">$120,000</span>
+              </div>
+              <div class="cost-bar-track">
+                <div class="cost-bar-fill usa-bar" style="width: 100%;"></div>
+              </div>
+            </div>
+
+            <div class="cost-row uk-row">
+              <div class="cost-meta">
+                <span class="country-name">🇬🇧 UK</span>
+                <span class="cost-val" id="costUK">$45,000</span>
+              </div>
+              <div class="cost-bar-track">
+                <div class="cost-bar-fill uk-bar" style="width: 48%;"></div>
+              </div>
+            </div>
+
+            <div class="cost-row uae-row">
+              <div class="cost-meta">
+                <span class="country-name">🇦🇪 UAE</span>
+                <span class="cost-val" id="costUAE">$32,000</span>
+              </div>
+              <div class="cost-bar-track">
+                <div class="cost-bar-fill uae-bar" style="width: 35%;"></div>
+              </div>
+            </div>
+
+            <div class="cost-row delhi-row">
+              <div class="cost-meta">
+                <span class="country-name highlight-country">🇮🇳 Delhi NCR (India)</span>
+                <span class="cost-val highlight-val" id="costDelhi">$6,200</span>
+              </div>
+              <div class="cost-bar-track">
+                <div class="cost-bar-fill delhi-bar" style="width: 12%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Big Savings Banner -->
+          <div class="savings-result-card">
+            <div class="savings-text-group">
+              <span class="savings-label">Your Estimated Savings:</span>
+              <span class="savings-amount" id="savingsAmount">$113,800 (94% Saved)</span>
+            </div>
+            <button class="btn btn-primary" onclick="openConsultModal('Cost Estimate Request')">
+              Get Detailed Quote
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DELHI SUPER-SPECIALTY HOSPITALS DIRECTORY -->
+  <section class="section hospitals-section" id="hospitals">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-heading">Premier Infrastructure</span>
+        <h2 class="section-title">Delhi's Leading Super-Specialty Hospitals</h2>
+        <p class="section-subtitle">
+          Accredited by JCI (USA) & NABH (India), equipped with Da Vinci Xi robotic surgical systems, 3T MRIs, PET-CT, and specialized international patient wings.
+        </p>
+      </div>
+
+      <!-- Hospital Filters Bar -->
+      <div class="filters-pill-group" id="hospitalFilters">
+        <button class="filter-btn active" data-filter="all">All Delhi NCR</button>
+        <button class="filter-btn" data-filter="jci">JCI Accredited</button>
+        <button class="filter-btn" data-filter="cardiac">Cardiac Centers</button>
+        <button class="filter-btn" data-filter="oncology">Cancer Institutes</button>
+        <button class="filter-btn" data-filter="transplant">Organ Transplants</button>
+        <button class="filter-btn" data-filter="south-delhi">South Delhi</button>
+        <button class="filter-btn" data-filter="central-delhi">Central Delhi</button>
+        <button class="filter-btn" data-filter="gurugram">Gurugram / NCR</button>
+      </div>
+
+      <!-- Hospitals Grid -->
+      <div class="hospitals-grid" id="hospitalsGrid">
+        <!-- Apollo Hospitals -->
+        <article class="hospital-card" data-tags="all jci cardiac oncology transplant south-delhi">
+          <div class="hospital-card-img apollo-img">
+            <div class="card-badges-top">
+              <span class="badge-accred jci-badge">JCI USA Accredited</span>
+              <span class="badge-accred nabh-badge">NABH Certified</span>
+            </div>
+            <div class="hospital-loc-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              Sarita Vihar, South Delhi
+            </div>
+          </div>
+          <div class="hospital-card-body">
+            <h3 class="hospital-name">Indraprastha Apollo Hospitals</h3>
+            <p class="hospital-description">
+              India's first JCI-accredited super-specialty flagship hospital. Renowned globally for complex multi-organ transplants, cardiology, and robotic surgery.
+            </p>
+            <div class="hospital-stats-row">
+              <div class="h-stat">
+                <span class="h-stat-num">710+</span>
+                <span class="h-stat-lbl">Beds</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">140+</span>
+                <span class="h-stat-lbl">ICU Beds</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">350+</span>
+                <span class="h-stat-lbl">Top Surgeons</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">50+</span>
+                <span class="h-stat-lbl">Specialties</span>
+              </div>
+            </div>
+            <div class="hospital-features-list">
+              <span class="feat-pill">Organ Transplant Center</span>
+              <span class="feat-pill">Da Vinci Robotic Surgery</span>
+              <span class="feat-pill">CyberKnife Oncology</span>
+              <span class="feat-pill">Int'l Patient Lounge</span>
+            </div>
+            <div class="hospital-card-footer">
+              <button class="btn btn-outline" onclick="openHospitalModal('Indraprastha Apollo Hospitals')">View Details</button>
+              <button class="btn btn-primary" onclick="openConsultModal('Appointment - Indraprastha Apollo Hospitals')">Consult Apollo</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Max Super Speciality Saket -->
+        <article class="hospital-card" data-tags="all jci oncology cardiac transplant south-delhi">
+          <div class="hospital-card-img max-img">
+            <div class="card-badges-top">
+              <span class="badge-accred jci-badge">JCI USA Accredited</span>
+              <span class="badge-accred nabh-badge">NABH Certified</span>
+            </div>
+            <div class="hospital-loc-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              Saket, South Delhi
+            </div>
+          </div>
+          <div class="hospital-card-body">
+            <h3 class="hospital-name">Max Super Speciality Hospital</h3>
+            <p class="hospital-description">
+              Premier South Delhi institution featuring Max Institute of Cancer Care, TrueBeam Linac, Next-Gen Intraoperative MRI and leading spine & joint surgeons.
+            </p>
+            <div class="hospital-stats-row">
+              <div class="h-stat">
+                <span class="h-stat-num">530+</span>
+                <span class="h-stat-lbl">Beds</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">120+</span>
+                <span class="h-stat-lbl">Critical ICUs</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">280+</span>
+                <span class="h-stat-lbl">Consultants</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">4.9★</span>
+                <span class="h-stat-lbl">Patient Rating</span>
+              </div>
+            </div>
+            <div class="hospital-features-list">
+              <span class="feat-pill">TrueBeam STx Radiation</span>
+              <span class="feat-pill">Brain Suite MRI</span>
+              <span class="feat-pill">Liver & Renal Unit</span>
+              <span class="feat-pill">Airport Concierge</span>
+            </div>
+            <div class="hospital-card-footer">
+              <button class="btn btn-outline" onclick="openHospitalModal('Max Super Speciality Hospital Saket')">View Details</button>
+              <button class="btn btn-primary" onclick="openConsultModal('Appointment - Max Super Speciality Saket')">Consult Max</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fortis Escorts Heart Institute -->
+        <article class="hospital-card" data-tags="all jci cardiac south-delhi">
+          <div class="hospital-card-img fortis-img">
+            <div class="card-badges-top">
+              <span class="badge-accred jci-badge">JCI USA Accredited</span>
+              <span class="badge-accred nabh-badge">Asia Top Cardiac</span>
+            </div>
+            <div class="hospital-loc-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              Okhla Road, New Delhi
+            </div>
+          </div>
+          <div class="hospital-card-body">
+            <h3 class="hospital-name">Fortis Escorts Heart Institute (FEHI)</h3>
+            <p class="hospital-description">
+              Pioneer and benchmark for cardiac surgery globally. Headed by legendary cardiologists, performing over 20,000 bypass, valve, and pediatric procedures annually.
+            </p>
+            <div class="hospital-stats-row">
+              <div class="h-stat">
+                <span class="h-stat-num">310+</span>
+                <span class="h-stat-lbl">Beds</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">9</span>
+                <span class="h-stat-lbl">Advanced Cath Labs</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">99.6%</span>
+                <span class="h-stat-lbl">CABG Success</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">34+ Yrs</span>
+                <span class="h-stat-lbl">Excellence</span>
+              </div>
+            </div>
+            <div class="hospital-features-list">
+              <span class="feat-pill">TAVI / TAVR Specialist</span>
+              <span class="feat-pill">Pediatric Cardiology</span>
+              <span class="feat-pill">Heart Failure Clinic</span>
+              <span class="feat-pill">ECMO Protocol</span>
+            </div>
+            <div class="hospital-card-footer">
+              <button class="btn btn-outline" onclick="openHospitalModal('Fortis Escorts Heart Institute')">View Details</button>
+              <button class="btn btn-primary" onclick="openConsultModal('Appointment - Fortis Escorts Heart Institute')">Consult Fortis</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- BLK-Max Super Speciality Hospital -->
+        <article class="hospital-card" data-tags="all jci oncology transplant central-delhi">
+          <div class="hospital-card-img blk-img">
+            <div class="card-badges-top">
+              <span class="badge-accred jci-badge">JCI USA Accredited</span>
+              <span class="badge-accred nabh-badge">Largest BMT Unit</span>
+            </div>
+            <div class="hospital-loc-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              Pusa Road, Central Delhi
+            </div>
+          </div>
+          <div class="hospital-card-body">
+            <h3 class="hospital-name">BLK-Max Super Speciality Hospital</h3>
+            <p class="hospital-description">
+              One of Northern India's largest tertiary private hospitals, housing Asia's biggest Bone Marrow Transplant center, robotic cancer surgery, and bariatrics.
+            </p>
+            <div class="hospital-stats-row">
+              <div class="h-stat">
+                <span class="h-stat-num">650+</span>
+                <span class="h-stat-lbl">Beds</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">125+</span>
+                <span class="h-stat-lbl">Critical ICUs</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">17</span>
+                <span class="h-stat-lbl">Modular OTs</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">1,000+</span>
+                <span class="h-stat-lbl">BMTs Performed</span>
+              </div>
+            </div>
+            <div class="hospital-features-list">
+              <span class="feat-pill">Bone Marrow Transplant</span>
+              <span class="feat-pill">CyberKnife Robotic Rad</span>
+              <span class="feat-pill">Hepato-Biliary Surgery</span>
+              <span class="feat-pill">Central Delhi Location</span>
+            </div>
+            <div class="hospital-card-footer">
+              <button class="btn btn-outline" onclick="openHospitalModal('BLK-Max Super Speciality Hospital')">View Details</button>
+              <button class="btn btn-primary" onclick="openConsultModal('Appointment - BLK-Max Hospital')">Consult BLK-Max</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Medanta - The Medicity -->
+        <article class="hospital-card" data-tags="all jci cardiac oncology transplant gurugram">
+          <div class="hospital-card-img medanta-img">
+            <div class="card-badges-top">
+              <span class="badge-accred jci-badge">JCI USA Accredited</span>
+              <span class="badge-accred nabh-badge">World Best Hospital</span>
+            </div>
+            <div class="hospital-loc-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              Gurugram, Delhi NCR (15 mins from IGI Airport)
+            </div>
+          </div>
+          <div class="hospital-card-body">
+            <h3 class="hospital-name">Medanta - The Medicity</h3>
+            <p class="hospital-description">
+              Sprawling across 43 acres, founded by Dr. Naresh Trehan. Ranked consistently among the World's Best Hospitals by Newsweek with unmatched multi-specialty depth.
+            </p>
+            <div class="hospital-stats-row">
+              <div class="h-stat">
+                <span class="h-stat-num">1,250+</span>
+                <span class="h-stat-lbl">Beds</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">350+</span>
+                <span class="h-stat-lbl">ICU Beds</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">40</span>
+                <span class="h-stat-lbl">Operation Theaters</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">800+</span>
+                <span class="h-stat-lbl">Doctors</span>
+              </div>
+            </div>
+            <div class="hospital-features-list">
+              <span class="feat-pill">Heart Institute</span>
+              <span class="feat-pill">Liver & Kidney Transplants</span>
+              <span class="feat-pill">Robotic Da Vinci Xi</span>
+              <span class="feat-pill">Air Ambulance Support</span>
+            </div>
+            <div class="hospital-card-footer">
+              <button class="btn btn-outline" onclick="openHospitalModal('Medanta - The Medicity')">View Details</button>
+              <button class="btn btn-primary" onclick="openConsultModal('Appointment - Medanta The Medicity')">Consult Medanta</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sir Ganga Ram Hospital -->
+        <article class="hospital-card" data-tags="all transplant central-delhi">
+          <div class="hospital-card-img gangaram-img">
+            <div class="card-badges-top">
+              <span class="badge-accred nabh-badge">NABH Certified</span>
+              <span class="badge-accred nabl-badge">NABL Accredited</span>
+            </div>
+            <div class="hospital-loc-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              Rajinder Nagar, Central Delhi
+            </div>
+          </div>
+          <div class="hospital-card-body">
+            <h3 class="hospital-name">Sir Ganga Ram Hospital</h3>
+            <p class="hospital-description">
+              Delhi's iconic medical trust institution. Renowned for pioneer minimally invasive surgery, liver transplants, IVF genetics, and high patient trust index.
+            </p>
+            <div class="hospital-stats-row">
+              <div class="h-stat">
+                <span class="h-stat-num">675+</span>
+                <span class="h-stat-lbl">Beds</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">100+</span>
+                <span class="h-stat-lbl">ICU Beds</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">60+</span>
+                <span class="h-stat-lbl">Specialties</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">70+ Yrs</span>
+                <span class="h-stat-lbl">Heritage</span>
+              </div>
+            </div>
+            <div class="hospital-features-list">
+              <span class="feat-pill">Minimally Invasive Center</span>
+              <span class="feat-pill">Pioneer IVF Center</span>
+              <span class="feat-pill">Pediatric Nephrology</span>
+              <span class="feat-pill">Clinical Research</span>
+            </div>
+            <div class="hospital-card-footer">
+              <button class="btn btn-outline" onclick="openHospitalModal('Sir Ganga Ram Hospital')">View Details</button>
+              <button class="btn btn-primary" onclick="openConsultModal('Appointment - Sir Ganga Ram Hospital')">Consult Ganga Ram</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Manipal Hospital Dwarka -->
+        <article class="hospital-card" data-tags="all jci oncology cardiac">
+          <div class="hospital-card-img manipal-img">
+            <div class="card-badges-top">
+              <span class="badge-accred jci-badge">NABH & NABL</span>
+              <span class="badge-accred nabh-badge">Near Airport</span>
+            </div>
+            <div class="hospital-loc-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              Dwarka Sector 6, New Delhi (10m from Airport)
+            </div>
+          </div>
+          <div class="hospital-card-body">
+            <h3 class="hospital-name">Manipal Hospital, Dwarka</h3>
+            <p class="hospital-description">
+              State-of-the-art multi-super specialty facility offering seamless digital patient care, comprehensive oncology, robotic knee arthroplasty, and emergency care.
+            </p>
+            <div class="hospital-stats-row">
+              <div class="h-stat">
+                <span class="h-stat-num">380+</span>
+                <span class="h-stat-lbl">Beds</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">118</span>
+                <span class="h-stat-lbl">Critical ICUs</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">13</span>
+                <span class="h-stat-lbl">Modular OTs</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">150+</span>
+                <span class="h-stat-lbl">Specialists</span>
+              </div>
+            </div>
+            <div class="hospital-features-list">
+              <span class="feat-pill">Smart Connected ICUs</span>
+              <span class="feat-pill">Robotic Orthopedics</span>
+              <span class="feat-pill">Dedicated Int'l Lounge</span>
+              <span class="feat-pill">Instant Airport Transfer</span>
+            </div>
+            <div class="hospital-card-footer">
+              <button class="btn btn-outline" onclick="openHospitalModal('Manipal Hospital Dwarka')">View Details</button>
+              <button class="btn btn-primary" onclick="openConsultModal('Appointment - Manipal Hospital Dwarka')">Consult Manipal</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fortis Memorial Research Institute FMRI -->
+        <article class="hospital-card" data-tags="all jci oncology transplant gurugram">
+          <div class="hospital-card-img fmri-img">
+            <div class="card-badges-top">
+              <span class="badge-accred jci-badge">JCI USA Accredited</span>
+              <span class="badge-accred nabh-badge">Ranked #2 Globally</span>
+            </div>
+            <div class="hospital-loc-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              Gurugram, Delhi NCR
+            </div>
+          </div>
+          <div class="hospital-card-body">
+            <h3 class="hospital-name">Fortis Memorial Research Institute (FMRI)</h3>
+            <p class="hospital-description">
+              Known as the 'Mecca of Healthcare', FMRI provides quaternary care in neurosciences, robotic oncology, stem cell transplant, and pediatric surgery.
+            </p>
+            <div class="hospital-stats-row">
+              <div class="h-stat">
+                <span class="h-stat-num">1,000</span>
+                <span class="h-stat-lbl">Planned Beds</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">15</span>
+                <span class="h-stat-lbl">OTs with Robotics</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">4.9★</span>
+                <span class="h-stat-lbl">Global Reviews</span>
+              </div>
+              <div class="h-stat">
+                <span class="h-stat-num">40+</span>
+                <span class="h-stat-lbl">Countries Served</span>
+              </div>
+            </div>
+            <div class="hospital-features-list">
+              <span class="feat-pill">Voice-Modulated OTs</span>
+              <span class="feat-pill">3-Tesla Digital MRI</span>
+              <span class="feat-pill">Stem Cell Unit</span>
+              <span class="feat-pill">Halal Food & Suites</span>
+            </div>
+            <div class="hospital-card-footer">
+              <button class="btn btn-outline" onclick="openHospitalModal('Fortis Memorial Research Institute')">View Details</button>
+              <button class="btn btn-primary" onclick="openConsultModal('Appointment - FMRI')">Consult FMRI</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOP DELHI SPECIALISTS & DOCTORS DIRECTORY -->
+  <section class="section doctors-section" id="doctors">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-heading">World-Class Medical Minds</span>
+        <h2 class="section-title">Delhi's Most Renowned Surgeons & Specialists</h2>
+        <p class="section-subtitle">
+          Pioneers with 25+ to 40+ years of surgical mastery, international fellowships (UK, USA), and thousands of successful complex operations.
+        </p>
+      </div>
+
+      <!-- Doctor Specialty Filter Tabs -->
+      <div class="filters-pill-group" id="doctorFilters">
+        <button class="filter-btn active" data-docfilter="all">All Specialists</button>
+        <button class="filter-btn" data-docfilter="cardiology">Cardiology</button>
+        <button class="filter-btn" data-docfilter="oncology">Oncology / Cancer</button>
+        <button class="filter-btn" data-docfilter="transplant">Liver & Kidney Transplant</button>
+        <button class="filter-btn" data-docfilter="orthopedics">Orthopedics & Spine</button>
+        <button class="filter-btn" data-docfilter="neurology">Neurology</button>
+        <button class="filter-btn" data-docfilter="ivf">IVF & Infertility</button>
+      </div>
+
+      <div class="doctors-grid" id="doctorsGrid">
+        <!-- Dr. Ashok Seth -->
+        <div class="doctor-card" data-docspecialty="cardiology">
+          <div class="doctor-header-info">
+            <div class="doctor-avatar doc-seth">
+              <span class="avatar-initials">AS</span>
+            </div>
+            <div class="doc-title-group">
+              <div class="doc-badge-verified">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                Padma Bhushan Awardee
+              </div>
+              <h3 class="doc-name">Dr. Ashok Seth</h3>
+              <p class="doc-designation">Chairman, Fortis Escorts Heart Institute</p>
+              <p class="doc-spec">Interventional Cardiology & Angioplasty Pioneer</p>
+            </div>
+          </div>
+          <div class="doc-metrics-strip">
+            <div class="doc-metric">
+              <span class="m-val">42+ Yrs</span>
+              <span class="m-lbl">Experience</span>
+            </div>
+            <div class="doc-metric">
+              <span class="m-val">50,000+</span>
+              <span class="m-lbl">Angiographies</span>
+            </div>
+            <div class="doc-metric">
+              <span class="m-val">99.5%</span>
+              <span class="m-lbl">Success Rate</span>
+            </div>
+          </div>
+          <p class="doc-bio">
+            Pioneer in Directional Atherectomy, Stents, and TAVR. Conferred national honours by the President of India. Recipient of FRCP (London, Edinburgh, Ireland).
+          </p>
+          <div class="doc-hospital-tag">
+            <span>Affiliation: <strong>Fortis Escorts Heart Institute, New Delhi</strong></span>
+          </div>
+          <div class="doc-card-actions">
+            <button class="btn btn-outline" onclick="openDoctorModal('Dr. Ashok Seth')">Full Profile</button>
+            <button class="btn btn-primary" onclick="openConsultModal('Consultation with Dr. Ashok Seth')">Book Video Consult</button>
+          </div>
+        </div>
+
+        <!-- Dr. Naresh Trehan -->
+        <div class="doctor-card" data-docspecialty="cardiology">
+          <div class="doctor-header-info">
+            <div class="doctor-avatar doc-trehan">
+              <span class="avatar-initials">NT</span>
+            </div>
+            <div class="doc-title-group">
+              <div class="doc-badge-verified">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                Padma Bhushan & Padma Shri
+              </div>
+              <h3 class="doc-name">Dr. Naresh Trehan</h3>
+              <p class="doc-designation">Chairman & Managing Director, Medanta</p>
+              <p class="doc-spec">Cardiovascular & Cardiothoracic Surgeon</p>
+            </div>
+          </div>
+          <div class="doc-metrics-strip">
+            <div class="doc-metric">
+              <span class="m-val">52+ Yrs</span>
+              <span class="m-lbl">Experience</span>
+            </div>
+            <div class="doc-metric">
+              <span class="m-val">48,000+</span>
+              <span class="m-lbl">Open Heart Surgeries</span>
+            </div>
+            <div class="doc-metric">
+              <span class="m-val">Former NYU</span>
+              <span class="m-lbl">US Board Certified</span>
+            </div>
+          </div>
+          <p class="doc-bio">
+            World-renowned heart surgeon trained at NYU Medical Center USA. Global authority on minimally invasive cardiac surgery and complex arterial coronary revascularization.
+          </p>
+          <div class="doc-hospital-tag">
+            <span>Affiliation: <strong>Medanta - The Medicity, Delhi NCR</strong></span>
+          </div>
+          <div class="doc-card-actions">
+            <button class="btn btn-outline" onclick="openDoctorModal('Dr. Naresh Trehan')">Full Profile</button>
+            <button class="btn btn-primary" onclick="openConsultModal('Consultation with Dr. Naresh Trehan')">Book Video Consult</button>
+          </div>
+        </div>
+
+        <!-- Dr. Arvinder Singh Soin -->
+        <div class="doctor-card" data-docspecialty="transplant">
+          <div class="doctor-header-info">
+            <div class="doctor-avatar doc-soin">
+              <span class="avatar-initials">AS</span>
+            </div>
+            <div class="doc-title-group">
+              <div class="doc-badge-verified">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                Padma Shri Awardee
+              </div>
+              <h3 class="doc-name">Dr. Arvinder Singh Soin</h3>
+              <p class="doc-designation">Chairman, Liver Transplantation & Regenerative Medicine</p>
+              <p class="doc-spec">Chief Hepatobiliary & Liver Surgeon</p>
+            </div>
+          </div>
+          <div class="doc-metrics-strip">
+            <div class="doc-metric">
+              <span class="m-val">34+ Yrs</span>
+              <span class="m-lbl">Experience</span>
+            </div>
+            <div class="doc-metric">
+              <span class="m-val">3,800+</span>
+              <span class="m-lbl">Liver Transplants</span>
+            </div>
+            <div class="doc-metric">
+              <span class="m-val">95%</span>
+              <span class="m-lbl">Transplant Success</span>
+            </div>
+          </div>
+          <p class="doc-bio">
+            Pioneered living donor liver transplants in India. Trained at University of Cambridge & King's College London. Leads the most prolific liver unit globally.
+          </p>
+          <div class="doc-hospital-tag">
+            <span>Affiliation: <strong>Medanta - The Medicity & Apollo Hospitals</strong></span>
+          </div>
+          <div class="doc-card-actions">
+            <button class="btn btn-outline" onclick="openDoctorModal('Dr. Arvinder Singh Soin')">Full Profile</button>
+            <button class="btn btn-primary" onclick="openConsultModal('Consultation with Dr. Arvinder Singh Soin')">Book Video Consult</button>
+          </div>
+        </div>
+
+        <!-- Dr. Harit Chaturvedi -->
+        <div class="doctor-card" data-docspecialty="oncology">
+          <div class="doctor-header-info">
+            <div class="doctor-avatar doc-chaturvedi">
+              <span class="avatar-initials">HC</span>
+            </div>
+            <div class="doc-title-group">
+              <div class="doc-badge-verified">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                President, Indian Assoc. of Surgical Oncology
+              </div>
+              <h3 class="doc-name">Dr. Harit Chaturvedi</h3>
+              <p class="doc-designation">Chairman, Max Institute of Cancer Care</p>
+              <p class="doc-spec">Senior Surgical Oncologist & Robotic Cancer Surgeon</p>
+            </div>
+          </div>
+          <div class="doc-metrics-strip">
+            <div class="doc-metric">
+              <span class="m-val">32+ Yrs</span>
+              <span class="m-lbl">Experience</span>
+            </div>
+            <div class="doc-metric">
+              <span class="m-val">22,000+</span>
+              <span class="m-lbl">Surgeries</span>
+            </div>
+            <div class="doc-metric">
+              <span class="m-val">Robotic Da Vinci</span>
+              <span class="m-lbl">Certified Master</span>
+            </div>
+          </div>
+          <p class="doc-bio">
+            Trained at Kidwai Memorial Institute of Oncology. Specializes in complex abdominal cancers, breast preservation, and precision robotic oncological resections.
+          </p>
+          <div class="doc-hospital-tag">
+            <span>Affiliation: <strong>Max Super Speciality Hospital, Saket</strong></span>
+          </div>
+          <div class="doc-card-actions">
+            <button class="btn btn-outline" onclick="openDoctorModal('Dr. Harit Chaturvedi')">Full Profile</button>
+            <button class="btn btn-primary" onclick="openConsultModal('Consultation with Dr. Harit Chaturvedi')">Book Video Consult</button>
+          </div>
+        </div>
+
+        <!-- Dr. S. K. S. Marya -->
+        <div class="doctor-card" data-docspecialty="orthopedics">
+          <div class="doctor-header-info">
+            <div class="doctor-avatar doc-marya">
+              <span class="avatar-initials">SM</span>
+            </div>
+            <div class="doc-title-group">
+              <div class="doc-badge-verified">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                President, Asia Pacific Arthroplasty
+              </div>
+              <h3 class="doc-name">Dr. S. K. S. Marya</h3>
+              <p class="doc-designation">Chairman, Orthopaedics & Joint Replacement</p>
+              <p class="doc-spec">Robotic Joint Replacement Pioneer</p>
+            </div>
+          </div>
+          <div class="doc-metrics-strip">
+            <div class="doc-metric">
+              <span class="m-val">38+ Yrs</span>
+              <span class="m-lbl">Experience</span>
+            </div>
+            <div class="doc-metric">
+              <span class="m-val">18,000+</span>
+              <span class="m-lbl">Joint Surgeries</span>
+            </div>
+            <div class="doc-metric">
+              <span class="m-val">FRCS (UK)</span>
+              <span class="m-lbl">Fellow Royal College</span>
+            </div>
+          </div>
+          <p class="doc-bio">
+            Pioneer of computerized navigation and robotic knee/hip arthroplasty in India. Renowned across the Middle East, Africa, and Central Asia for revision surgeries.
+          </p>
+          <div class="doc-hospital-tag">
+            <span>Affiliation: <strong>Max Healthcare & Medanta Institute</strong></span>
+          </div>
+          <div class="doc-card-actions">
+            <button class="btn btn-outline" onclick="openDoctorModal('Dr. S. K. S. Marya')">Full Profile</button>
+            <button class="btn btn-primary" onclick="openConsultModal('Consultation with Dr. S. K. S. Marya')">Book Video Consult</button>
+          </div>
+        </div>
+
+        <!-- Dr. Bipin Walia -->
+        <div class="doctor-card" data-docspecialty="neurology">
+          <div class="doctor-header-info">
+            <div class="doctor-avatar doc-walia">
+              <span class="avatar-initials">BW</span>
+            </div>
+            <div class="doc-title-group">
+              <div class="doc-badge-verified">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                Armed Forces Medical Specialist
+              </div>
+              <h3 class="doc-name">Dr. Bipin Walia</h3>
+              <p class="doc-designation">Head of Spine Surgery & Neurosciences</p>
+              <p class="doc-spec">Endoscopic Spine Surgery & Neuro-Oncology</p>
+            </div>
+          </div>
+          <div class="doc-metrics-strip">
+            <div class="doc-metric">
+              <span class="m-val">30+ Yrs</span>
+              <span class="m-lbl">Experience</span>
+            </div>
+            <div class="doc-metric">
+              <span class="m-val">9,000+</span>
+              <span class="m-lbl">Spine Surgeries</span>
+            </div>
+            <div class="doc-metric">
+              <span class="m-val">Germany Trained</span>
+              <span class="m-lbl">Minimally Invasive</span>
+            </div>
+          </div>
+          <p class="doc-bio">
+            Trained in neurosurgery at University of Erlangen Germany & Zurich. One of the few surgeons with mastery over motion-preserving spinal disc replacements.
+          </p>
+          <div class="doc-hospital-tag">
+            <span>Affiliation: <strong>Max Super Speciality Hospital, Saket</strong></span>
+          </div>
+          <div class="doc-card-actions">
+            <button class="btn btn-outline" onclick="openDoctorModal('Dr. Bipin Walia')">Full Profile</button>
+            <button class="btn btn-primary" onclick="openConsultModal('Consultation with Dr. Bipin Walia')">Book Video Consult</button>
+          </div>
+        </div>
+
+        <!-- Dr. Abha Majumdar -->
+        <div class="doctor-card" data-docspecialty="ivf">
+          <div class="doctor-header-info">
+            <div class="doctor-avatar doc-majumdar">
+              <span class="avatar-initials">AM</span>
+            </div>
+            <div class="doc-title-group">
+              <div class="doc-badge-verified">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                Pioneer IVF Specialist India
+              </div>
+              <h3 class="doc-name">Dr. Abha Majumdar</h3>
+              <p class="doc-designation">Director & Head of IVF and Reproductive Medicine</p>
+              <p class="doc-spec">Advanced Reproductive Endocrinology & ICSI</p>
+            </div>
+          </div>
+          <div class="doc-metrics-strip">
+            <div class="doc-metric">
+              <span class="m-val">37+ Yrs</span>
+              <span class="m-lbl">Experience</span>
+            </div>
+            <div class="doc-metric">
+              <span class="m-val">12,000+</span>
+              <span class="m-lbl">IVF Pregnancies</span>
+            </div>
+            <div class="doc-metric">
+              <span class="m-val">74%</span>
+              <span class="m-lbl">Cumulative Success</span>
+            </div>
+          </div>
+          <p class="doc-bio">
+            Pioneered the IVF program at Sir Ganga Ram Hospital. Specialist in repeated IVF failures, recurrent miscarriages, and preimplantation genetic testing.
+          </p>
+          <div class="doc-hospital-tag">
+            <span>Affiliation: <strong>Sir Ganga Ram Hospital, Central Delhi</strong></span>
+          </div>
+          <div class="doc-card-actions">
+            <button class="btn btn-outline" onclick="openDoctorModal('Dr. Abha Majumdar')">Full Profile</button>
+            <button class="btn btn-primary" onclick="openConsultModal('Consultation with Dr. Abha Majumdar')">Book Video Consult</button>
+          </div>
+        </div>
+
+        <!-- Dr. Vinod Raina -->
+        <div class="doctor-card" data-docspecialty="oncology">
+          <div class="doctor-header-info">
+            <div class="doctor-avatar doc-raina">
+              <span class="avatar-initials">VR</span>
+            </div>
+            <div class="doc-title-group">
+              <div class="doc-badge-verified">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                Former Head Medical Oncology AIIMS
+              </div>
+              <h3 class="doc-name">Dr. Vinod Raina</h3>
+              <p class="doc-designation">Chairman, Onco-Sciences & Bone Marrow Transplant</p>
+              <p class="doc-spec">Medical Oncology, Chemotherapy & Immunotherapy</p>
+            </div>
+          </div>
+          <div class="doc-metrics-strip">
+            <div class="doc-metric">
+              <span class="m-val">40+ Yrs</span>
+              <span class="m-lbl">Experience</span>
+            </div>
+            <div class="doc-metric">
+              <span class="m-val">700+</span>
+              <span class="m-lbl">Transplants (BMT)</span>
+            </div>
+            <div class="doc-metric">
+              <span class="m-val">Ex-AIIMS</span>
+              <span class="m-lbl">23 Yrs Professor</span>
+            </div>
+          </div>
+          <p class="doc-bio">
+            Performed the first autologous transplant in India. Global figure in lung cancer, lymphoma, leukemia, and targeted molecular therapies.
+          </p>
+          <div class="doc-hospital-tag">
+            <span>Affiliation: <strong>Fortis Memorial Research Institute (FMRI)</strong></span>
+          </div>
+          <div class="doc-card-actions">
+            <button class="btn btn-outline" onclick="openDoctorModal('Dr. Vinod Raina')">Full Profile</button>
+            <button class="btn btn-primary" onclick="openConsultModal('Consultation with Dr. Vinod Raina')">Book Video Consult</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 360° COMPREHENSIVE PATIENT CONCIERGE (THE CAREBRIDGE ADVANTAGE) -->
+  <section class="section concierge-section" id="concierge">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-heading">End-to-End Care Protocol</span>
+        <h2 class="section-title">Complete Concierge for International Patients</h2>
+        <p class="section-subtitle">
+          From your first medical inquiry in your home country until your safe return, CareBridge coordinates every logistical and medical detail at <strong>ZERO added cost</strong> to you.
+        </p>
+      </div>
+
+      <div class="concierge-grid">
+        <div class="concierge-item">
+          <div class="c-icon-badge">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3 class="c-title">Free Multi-Doctor Opinions</h3>
+          <p class="c-text">Send your scan reports to receive 3 personalized treatment plans and estimated quotes from Delhi's top chief surgeons within 24 hours.</p>
+        </div>
+
+        <div class="concierge-item">
+          <div class="c-icon-badge">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3 class="c-title">Medical Visa Assistance</h3>
+          <p class="c-text">Official Hospital Visa Invitation Letter (VIL) dispatched within 12 hours for prompt Indian Embassy or e-Medical Visa approval for patient & attendant.</p>
+        </div>
+
+        <div class="concierge-item">
+          <div class="c-icon-badge">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"/></svg>
+          </div>
+          <h3 class="c-title">Airport Pickup & VIP Transport</h3>
+          <p class="c-text">Complimentary chauffeured airport pickup from Indira Gandhi International Airport (DEL) with specialized patient vehicle or ambulance if required.</p>
+        </div>
+
+        <div class="concierge-item">
+          <div class="c-icon-badge">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3 class="c-title">Dedicated Interpreters</h3>
+          <p class="c-text">Native language coordinators fluent in Arabic, Russian, French, Bengali, and Swahili by your side during doctor consultations and hospital stay.</p>
+        </div>
+
+        <div class="concierge-item">
+          <div class="c-icon-badge">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3 class="c-title">Stay & Halal Living Concierge</h3>
+          <p class="c-text">Discounted sanitized guest houses and 4/5-star hotels within 500m of the hospital with fully-equipped kitchens, halal food options, and family suites.</p>
+        </div>
+
+        <div class="concierge-item">
+          <div class="c-icon-badge">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <h3 class="c-title">Post-Op Telemedicine & Follow-up</h3>
+          <p class="c-text">Free video follow-up consultations with your Delhi surgeon for 6 months after returning home, plus door-to-door international medication dispatch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5-STEP SEAMLESS PATIENT JOURNEY -->
+  <section class="section journey-section" id="how-it-works">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-heading">Simple & Transparent</span>
+        <h2 class="section-title">Your 5-Step Path to Healing in Delhi</h2>
+        <p class="section-subtitle">
+          How thousands of international families navigate treatments smoothly without stress or unexpected bills.
+        </p>
+      </div>
+
+      <div class="journey-steps-timeline">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3 class="step-title">Submit Reports & Medical History</h3>
+            <p class="step-desc">Share existing MRI, CT scans, blood tests, or biopsy reports securely via our web portal or instant WhatsApp.</p>
+            <span class="step-badge">Within 2 Hours</span>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3 class="step-title">Get 3 Opinions & Cost Estimates</h3>
+            <p class="step-desc">Our medical board reviews your case with top specialists across Apollo, Max, Fortis, and Medanta to provide comparative plans.</p>
+            <span class="step-badge">Within 24 Hours</span>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3 class="step-title">Direct Video Call & Visa Letter</h3>
+            <p class="step-desc">Speak directly with your chosen surgeon via video consult, then receive official Indian Medical Visa Invitation Letters.</p>
+            <span class="step-badge">Free Coordination</span>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3 class="step-title">Arrival in Delhi & Treatment</h3>
+            <p class="step-desc">Chauffeured pickup from Delhi Airport to hotel/hospital, priority admission with zero wait time, and your dedicated personal care manager.</p>
+            <span class="step-badge">24/7 Personal Host</span>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">05</div>
+          <div class="step-content">
+            <h3 class="step-title">Recovery & Tele-Followups</h3>
+            <p class="step-desc">Post-discharge check-up, 'Fit to Fly' certification, medicine supplies, and lifelong follow-up access to your treating surgeon.</p>
+            <span class="step-badge">6 Months Free Support</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-cta text-center">
+        <button class="btn btn-primary btn-lg" onclick="openConsultModal('Start Patient Journey')">
+          <span>Start Your Free Assessment Today</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERNATIONAL PATIENT STORIES & TESTIMONIALS -->
+  <section class="section testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-heading">Real Healing Stories</span>
+        <h2 class="section-title">Trusted by Patients from 60+ Countries</h2>
+        <p class="section-subtitle">Read firsthand experiences of families who traveled to Delhi for life-saving treatments.</p>
+      </div>
+
+      <div class="testimonials-slider">
+        <div class="testimonial-card">
+          <div class="testi-header">
+            <div class="patient-avatar">FA</div>
+            <div class="patient-meta">
+              <h4 class="patient-name">Fatima Al-Mansoor</h4>
+              <p class="patient-country">Baghdad, Iraq 🇮🇶</p>
+              <div class="rating-stars">★★★★★</div>
+            </div>
+          </div>
+          <div class="testi-treatment-badge">Procedure: Robotic Liver Resection at Max Saket</div>
+          <p class="testi-quote">
+            "In Iraq, doctors told us my mother's liver tumor was inoperable. CareBridge connected us with Dr. Chaturvedi in Delhi. Within 4 days we landed at IGI Airport, had an Arabic interpreter with us, and the surgery was completely successful. We saved 80% compared to quotes from Turkey or Germany."
+          </p>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testi-header">
+            <div class="patient-avatar">EM</div>
+            <div class="patient-meta">
+              <h4 class="patient-name">Emmanuel Kiprop</h4>
+              <p class="patient-country">Nairobi, Kenya 🇰🇪</p>
+              <div class="rating-stars">★★★★★</div>
+            </div>
+          </div>
+          <div class="testi-treatment-badge">Procedure: Double Knee Replacement at Fortis</div>
+          <p class="testi-quote">
+            "I could barely walk for 3 years due to severe osteoarthritis. CareBridge arranged everything — our visas in 24 hours, hotel next to Fortis, and Dr. Marya did robotic knee surgery. On day two, I took my first steps pain-free! CareBridge team felt like family."
+          </p>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testi-header">
+            <div class="patient-avatar">UK</div>
+            <div class="patient-meta">
+              <h4 class="patient-name">Ulugbek Karimov</h4>
+              <p class="patient-country">Tashkent, Uzbekistan 🇺🇿</p>
+              <div class="rating-stars">★★★★★</div>
+            </div>
+          </div>
+          <div class="testi-treatment-badge">Procedure: Living Donor Kidney Transplant at Apollo</div>
+          <p class="testi-quote">
+            "The authorization process for kidney transplant in India requires extensive documentation. The CareBridge legal desk guided us step-by-step through the Delhi State Authorization Committee without a single hitch. My brother and I are both doing fantastic!"
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="section faq-section" id="faq">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-heading">Answers to Common Questions</span>
+        <h2 class="section-title">Medical Travel to Delhi FAQ</h2>
+        <p class="section-subtitle">Everything you need to know about Indian Medical Visas, treatment costs, stay, and safety.</p>
+      </div>
+
+      <div class="faq-accordion" id="faqAccordion">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Are CareBridge HealthCare services really 100% free for patients?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, absolutely. CareBridge is an officially authorized international facilitation network subsidized by partner hospitals. You pay nothing extra for our second opinions, airport pickup, visa invitation letters, or interpreters. You pay the hospital bill directly at official hospital cashier desks.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How do I get an Indian Medical Visa (e-Medical Visa)?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We provide an official Medical Visa Invitation Letter (VIL) from your chosen Delhi hospital with your passport and medical details stamped. You can apply for an Indian e-Medical Visa online, which is usually granted within 24 to 72 hours for over 160 countries.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How does Delhi healthcare compare to Western countries?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Top Delhi hospitals like Apollo, Max, Fortis, and Medanta hold American JCI accreditations, adhering to identical safety and clinical hygiene protocols as premier hospitals in Boston or London. Surgeons in Delhi routinely train or hold senior fellowships at prestigious UK Royal Colleges or American university hospitals, while costs are 70–80% lower due to favorable exchange rates and operational efficiencies.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can my family attendant stay with me in the hospital?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. In all private and deluxe rooms in Delhi's top hospitals, a companion couch or bed is provided for one attendant to stay inside the room with the patient. For extended recovery, we arrange verified serviced apartments near the hospital equipped with kitchenettes.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What languages are spoken by Delhi hospital doctors?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>All senior doctors and nurses in Delhi private hospitals are 100% fluent in English. For non-English speaking patients, CareBridge assigns dedicated native translators (Arabic, Russian, French, Swahili, Bengali, Persian) throughout your hospital visits.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner-section">
+    <div class="container">
+      <div class="cta-banner-inner">
+        <div class="cta-content">
+          <span class="badge-cta">Fast 24-Hour Assessment</span>
+          <h2 class="cta-title">Receive Your Free Delhi Treatment Plan & Quote</h2>
+          <p class="cta-desc">Upload your medical reports now or talk with our international patient coordinator on WhatsApp.</p>
+        </div>
+        <div class="cta-actions">
+          <button class="btn btn-primary btn-lg" onclick="openConsultModal('Footer CTA')">
+            Get Free Hospital Quotes
+          </button>
+          <a href="https://wa.me/919811002233?text=Hello%20CareBridge%2C%20I%20want%20to%20consult%20a%20Delhi%20doctor" target="_blank" class="btn btn-whatsapp-lg" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>Chat on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-col brand-col">
+        <a href="#" class="brand-logo footer-logo">
+          <div class="logo-symbol"><span class="cross">+</span></div>
+          <div class="logo-text">
+            <span class="brand-name">CareBridge</span>
+            <span class="brand-sub">HEALTHCARE DELHI</span>
+          </div>
+        </a>
+        <p class="footer-about">
+          Connecting patients globally to Delhi NCR's most prestigious JCI and NABH accredited hospitals and world-renowned doctors. Providing uncompromised quality, cost clarity, and end-to-end concierge services.
+        </p>
+        <div class="footer-contact-items">
+          <p>📍 Delhi Central Desk: Aero City, New Delhi 110037, India</p>
+          <p>📞 Phone: +91 98110 02233 | +91 11 4050 8800</p>
+          <p>✉️ Email: medicaldesk@carebridgehealthcare.com</p>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Top Delhi Hospitals</h4>
+        <ul class="footer-links">
+          <li><a href="#hospitals" onclick="filterHospitalTag('jci')">Indraprastha Apollo Hospitals</a></li>
+          <li><a href="#hospitals" onclick="filterHospitalTag('oncology')">Max Super Speciality Saket</a></li>
+          <li><a href="#hospitals" onclick="filterHospitalTag('cardiac')">Fortis Escorts Heart Institute</a></li>
+          <li><a href="#hospitals" onclick="filterHospitalTag('gurugram')">Medanta - The Medicity</a></li>
+          <li><a href="#hospitals" onclick="filterHospitalTag('central-delhi')">BLK-Max Hospital Delhi</a></li>
+          <li><a href="#hospitals" onclick="filterHospitalTag('central-delhi')">Sir Ganga Ram Hospital</a></li>
+          <li><a href="#hospitals">Manipal Hospital Dwarka</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Top Specialties</h4>
+        <ul class="footer-links">
+          <li><a href="#specialties">Cardiology & Bypass Surgery</a></li>
+          <li><a href="#specialties">Robotic Oncology & CyberKnife</a></li>
+          <li><a href="#specialties">Orthopedic Knee & Hip Replacement</a></li>
+          <li><a href="#specialties">Living Donor Liver & Kidney Transplant</a></li>
+          <li><a href="#specialties">Bone Marrow Transplant (BMT)</a></li>
+          <li><a href="#specialties">IVF & Reproductive Medicine</a></li>
+          <li><a href="#specialties">Neuro-Spine Microsurgery</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">International Patients</h4>
+        <ul class="footer-links">
+          <li><a href="#concierge">Indian e-Medical Visa Protocol</a></li>
+          <li><a href="#calculator">Treatment Cost Comparison</a></li>
+          <li><a href="#concierge">Free Airport Transport</a></li>
+          <li><a href="#concierge">Arabic & Russian Translators</a></li>
+          <li><a href="#testimonials">Patient Video Testimonials</a></li>
+          <li><a href="#faq">Medical Travel FAQ</a></li>
+          <li><a href="#" onclick="openConsultModal('Second Opinion')">Second Medical Opinion</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 CareBridge HealthCare International. All rights reserved. Registered Medical Facilitator, Delhi NCR.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Facilitation</a>
+          <a href="#">Medical Disclaimer</a>
+          <a href="#">HIPAA & GDPR Standards</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING QUICK WHATSAPP / INQUIRY DOCK -->
+  <div class="floating-quick-dock">
+    <a href="https://wa.me/919811002233?text=Hi%20CareBridge%2C%20I%20would%20like%20to%20consult%20regarding%20Delhi%20hospital%20treatment" target="_blank" class="dock-btn dock-whatsapp" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      <span class="dock-tooltip">Chat with Doctor Coordinator (24/7)</span>
+    </a>
+    <button class="dock-btn dock-consult" onclick="openConsultModal('Floating Dock')" aria-label="Book Free Consultation">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      <span class="dock-label">Free Opinion</span>
+    </button>
+  </div>
+
+  <!-- INTERACTIVE MODAL FOR INQUIRIES & FREE ESTIMATES -->
+  <div class="modal-backdrop" id="consultModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeConsultModal()" aria-label="Close Modal">&times;</button>
+      
+      <div class="modal-header">
+        <span class="modal-badge">100% Free Confidential Consultation</span>
+        <h3 class="modal-title" id="modalHeading">Request Treatment Plan & Doctor Opinion</h3>
+        <p class="modal-subtitle">Share your condition to receive multiple opinions from top Delhi surgeons within 24 hours.</p>
+      </div>
+
+      <form id="consultForm" onsubmit="submitConsultForm(event)">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="patientName">Patient Full Name *</label>
+            <input type="text" id="patientName" required placeholder="e.g. John Doe">
+          </div>
+
+          <div class="form-group">
+            <label for="patientCountry">Country of Residence *</label>
+            <input type="text" id="patientCountry" required placeholder="e.g. Nigeria, Iraq, Kenya, Uzbekistan, UK...">
+          </div>
+
+          <div class="form-group">
+            <label for="patientPhone">WhatsApp / Mobile Number *</label>
+            <input type="tel" id="patientPhone" required placeholder="+1 234 567 8900">
+          </div>
+
+          <div class="form-group">
+            <label for="patientEmail">Email Address *</label>
+            <input type="email" id="patientEmail" required placeholder="name@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="modalSpecialty">Specialty / Treatment Needed</label>
+            <select id="modalSpecialty">
+              <option value="Cardiology">Cardiology / Heart Surgery</option>
+              <option value="Oncology">Oncology / Cancer Treatment</option>
+              <option value="Orthopedics">Robotic Knee / Joint Replacement</option>
+              <option value="Transplant">Liver / Kidney / Bone Marrow Transplant</option>
+              <option value="Neurology">Neurology & Spine Surgery</option>
+              <option value="IVF">IVF & Fertility Treatment</option>
+              <option value="Other">Other Medical Treatment</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="preferredHospital">Preferred Delhi Hospital (Optional)</label>
+            <select id="preferredHospital">
+              <option value="Best Recommended">Best Match Recommended by Medical Board</option>
+              <option value="Indraprastha Apollo">Indraprastha Apollo Hospitals</option>
+              <option value="Max Healthcare">Max Super Speciality Saket</option>
+              <option value="Fortis Escorts">Fortis Escorts Heart Institute</option>
+              <option value="Medanta">Medanta - The Medicity</option>
+              <option value="BLK-Max">BLK-Max Hospital Delhi</option>
+              <option value="Sir Ganga Ram">Sir Ganga Ram Hospital</option>
+              <option value="Manipal">Manipal Hospital Dwarka</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="patientNotes">Describe Symptoms / Current Diagnosis</label>
+            <textarea id="patientNotes" rows="3" placeholder="Briefly describe patient's current symptoms, medical history, or specific questions..."></textarea>
+          </div>
+
+          <div class="form-group full-width">
+            <label>Upload Medical Reports (Scans, Biopsy, Blood Test - Optional)</label>
+            <div class="upload-dropzone" id="uploadDropzone">
+              <input type="file" id="reportFiles" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" onchange="handleFileSelected(event)">
+              <div class="dropzone-inner">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <p>Drag & drop reports here or <span class="browse-link">Browse files</span></p>
+                <span class="file-hint">PDF, JPG, PNG up to 25MB</span>
+              </div>
+            </div>
+            <div id="fileUploadList" class="file-upload-list"></div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <div class="privacy-note">
+            <span>🔒 Protected under HIPAA medical privacy. No spam.</span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-submit">
+            <span>Submit for Free Medical Review</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- DETAILS MODAL FOR HOSPITALS & DOCTORS -->
+  <div class="modal-backdrop" id="detailModal">
+    <div class="modal-card detail-modal-card">
+      <button class="modal-close-btn" onclick="closeDetailModal()" aria-label="Close Modal">&times;</button>
+      <div id="detailModalContent"></div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
