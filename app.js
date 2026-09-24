@@ -552,13 +552,6 @@ function initLanguageSelector() {
   // Protect labels initially
   protectLanguageLabels();
 
-  // Watch for any Google Translate DOM alterations to guarantee labels stay intact
-  const selects = [document.getElementById('languageSelect'), document.getElementById('mobileLanguageSelect')].filter(Boolean);
-  selects.forEach(sel => {
-    const observer = new MutationObserver(() => protectLanguageLabels());
-    observer.observe(sel, { childList: true, subtree: true, characterData: true });
-  });
-
   // Apply on initial load if saved language is not default English
   if (currentLanguage && currentLanguage !== 'en') {
     applyLanguage(currentLanguage, false);
@@ -587,16 +580,26 @@ const CANONICAL_LANGUAGES = {
   so: 'Soomaali (Somali)'
 };
 
+let isProtectingLabels = false;
 function protectLanguageLabels() {
-  ['languageSelect', 'mobileLanguageSelect'].forEach(id => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    Array.from(el.options).forEach(opt => {
-      if (CANONICAL_LANGUAGES[opt.value]) {
-        opt.textContent = CANONICAL_LANGUAGES[opt.value];
+  if (isProtectingLabels) return;
+  isProtectingLabels = true;
+  try {
+    const selects = ['languageSelect', 'mobileLanguageSelect'];
+    selects.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      for (let i = 0; i < el.options.length; i++) {
+        const opt = el.options[i];
+        const canonical = CANONICAL_LANGUAGES[opt.value];
+        if (canonical && opt.textContent !== canonical) {
+          opt.textContent = canonical;
+        }
       }
     });
-  });
+  } finally {
+    isProtectingLabels = false;
+  }
 }
 
 function setLanguage(lang) {
@@ -613,6 +616,7 @@ function setLanguage(lang) {
   protectLanguageLabels();
 }
 
+let gtSyncTimer = null;
 function applyLanguage(lang, showNotification = true) {
   // 1. Set HTML dir and lang attributes (RTL for Arabic, Persian, Urdu, Pashto)
   const RTL_LANGUAGES = ['ar', 'fa', 'ur', 'ps'];
@@ -639,6 +643,11 @@ function applyLanguage(lang, showNotification = true) {
       document.cookie = `googtrans=/en/${lang}; domain=.${window.location.hostname}; path=/;`;
     }
 
+    if (gtSyncTimer) {
+      clearInterval(gtSyncTimer);
+      gtSyncTimer = null;
+    }
+
     const triggerCombo = () => {
       const gtCombo = document.querySelector('.goog-te-combo');
       if (gtCombo) {
@@ -653,20 +662,23 @@ function applyLanguage(lang, showNotification = true) {
 
     if (!triggerCombo()) {
       let retries = 0;
-      const interval = setInterval(() => {
+      gtSyncTimer = setInterval(() => {
         retries++;
-        if (triggerCombo() || retries > 12) {
-          clearInterval(interval);
+        if (triggerCombo() || retries > 10) {
+          clearInterval(gtSyncTimer);
+          gtSyncTimer = null;
           protectLanguageLabels();
         }
-      }, 250);
+      }, 300);
     }
   } catch (err) {
     console.warn('Google Translate sync:', err);
   }
 
-  // Ensure labels stay protected
+  // Ensure labels stay protected safely
   protectLanguageLabels();
+  setTimeout(protectLanguageLabels, 400);
+  setTimeout(protectLanguageLabels, 1200);
 
   // 4. Toast notification
   if (showNotification) {
