@@ -95,6 +95,7 @@ const COST_DATABASE = {
 const HOSPITAL_DETAILS = {
   'Indraprastha Apollo Hospitals': {
     title: 'Indraprastha Apollo Hospitals',
+    image: 'https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=800&q=80',
     location: 'Sarita Vihar, Mathura Road, South Delhi 110076',
     accreditations: ['JCI USA Accredited (Consecutively since 2005)', 'NABH', 'NABL'],
     beds: '710 Beds (140 Critical Care Beds)',
@@ -108,6 +109,7 @@ const HOSPITAL_DETAILS = {
   },
   'Max Super Speciality Hospital Saket': {
     title: 'Max Super Speciality Hospital, Saket',
+    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80',
     location: '1, 2, Press Enclave Marg, Saket, South Delhi 110017',
     accreditations: ['JCI USA Accredited', 'NABH Certified', 'Green OT Certification'],
     beds: '530+ Beds (120 ICU Beds)',
@@ -121,6 +123,7 @@ const HOSPITAL_DETAILS = {
   },
   'Fortis Escorts Heart Institute': {
     title: 'Fortis Escorts Heart Institute (FEHI)',
+    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80',
     location: 'Okhla Road, New Friends Colony, South Delhi 110025',
     accreditations: ['JCI USA Accredited', 'NABH (Asia’s Premier Cardiac Institute)'],
     beds: '310 Beds (Dedicated 100 Cardiac Critical Beds)',
@@ -134,6 +137,7 @@ const HOSPITAL_DETAILS = {
   },
   'BLK-Max Super Speciality Hospital': {
     title: 'BLK-Max Super Speciality Hospital',
+    image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80',
     location: 'Pusa Road, Karol Bagh, Central Delhi 110005',
     accreditations: ['JCI USA Accredited', 'NABH Certified', 'Largest Bone Marrow Center'],
     beds: '650 Beds (125 Critical Care Beds, 17 Modular OTs)',
@@ -147,6 +151,7 @@ const HOSPITAL_DETAILS = {
   },
   'Medanta - The Medicity': {
     title: 'Medanta - The Medicity',
+    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=800&q=80',
     location: 'CH Bakhtawar Singh Rd, Sector 38, Gurugram, Delhi NCR 122001',
     accreditations: ['JCI USA Accredited', 'NABH Certified', 'Newsweek World Best Hospital List'],
     beds: '1,250+ Beds (350+ ICU Beds, 40 State-of-Art Operation Theaters)',
@@ -160,6 +165,7 @@ const HOSPITAL_DETAILS = {
   },
   'Sir Ganga Ram Hospital': {
     title: 'Sir Ganga Ram Hospital',
+    image: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=800&q=80',
     location: 'Rajinder Nagar, New Delhi 110060',
     accreditations: ['NABH Certified', 'NABL Accredited Laboratory'],
     beds: '675 Beds (100 ICU Beds, 60 Multi-Super Specialties)',
@@ -173,6 +179,7 @@ const HOSPITAL_DETAILS = {
   },
   'Manipal Hospital Dwarka': {
     title: 'Manipal Hospital, Dwarka',
+    image: 'https://images.unsplash.com/photo-1512678080530-7760d81faba6?auto=format&fit=crop&w=800&q=80',
     location: 'Sector 6, Dwarka, New Delhi 110075 (10 Mins from Airport)',
     accreditations: ['NABH Certified', 'NABL Accredited', 'ISO 9001'],
     beds: '380 Beds (118 Critical ICUs, 13 Modular OTs)',
@@ -186,6 +193,7 @@ const HOSPITAL_DETAILS = {
   },
   'Fortis Memorial Research Institute': {
     title: 'Fortis Memorial Research Institute (FMRI)',
+    image: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80',
     location: 'Sector 44, Gurugram, Delhi NCR 122002',
     accreditations: ['JCI USA Accredited', 'NABH', 'Ranked #2 Globally by Top Master Healthcare'],
     beds: '1,000 Planned Beds (15 Voice-Modulated Modular OTs)',
@@ -202,6 +210,7 @@ const HOSPITAL_DETAILS = {
 const DOCTOR_DETAILS = {
   'Dr. Ashok Seth': {
     name: 'Dr. Ashok Seth',
+    image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=500&q=80',
     title: 'Padma Bhushan & Padma Shri Awardee',
     designation: 'Chairman, Fortis Escorts Heart Institute, New Delhi',
     experience: '42+ Years Surgical Excellence',
@@ -212,6 +221,7 @@ const DOCTOR_DETAILS = {
   },
   'Dr. Naresh Trehan': {
     name: 'Dr. Naresh Trehan',
+    image: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=500&q=80',
     title: 'Padma Bhushan & Padma Shri Awardee',
     designation: 'Chairman & Managing Director, Medanta - The Medicity',
     experience: '52+ Years Clinical & Surgical Eminence',
@@ -222,6 +232,7 @@ const DOCTOR_DETAILS = {
   },
   'Dr. Arvinder Singh Soin': {
     name: 'Dr. Arvinder Singh Soin',
+    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=500&q=80',
     title: 'Padma Shri Awardee',
     designation: 'Chairman, Liver Transplantation Institute, Medanta',
     experience: '34+ Years Pioneering Surgical Experience',
@@ -232,6 +243,7 @@ const DOCTOR_DETAILS = {
   },
   'Dr. Harit Chaturvedi': {
     name: 'Dr. Harit Chaturvedi',
+    image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=500&q=80',
     title: 'President, Indian Association of Surgical Oncology',
     designation: 'Chairman, Max Institute of Cancer Care, Saket',
     experience: '32+ Years Cancer Surgery Mastery',
@@ -242,6 +254,7 @@ const DOCTOR_DETAILS = {
   },
   'Dr. S. K. S. Marya': {
     name: 'Dr. S. K. S. Marya',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=500&q=80',
     title: 'Former President, Asia Pacific Arthroplasty Society',
     designation: 'Chairman, Joint Replacement & Orthopedics, Max Healthcare',
     experience: '38+ Years Orthopedic Leadership',
@@ -252,6 +265,7 @@ const DOCTOR_DETAILS = {
   },
   'Dr. Bipin Walia': {
     name: 'Dr. Bipin Walia',
+    image: 'https://images.unsplash.com/photo-1622902046580-2b47f47f5471?auto=format&fit=crop&w=500&q=80',
     title: 'Armed Forces Medical Leader & Neuro Pioneer',
     designation: 'Senior Director & Head of Spine Surgery, Max Saket',
     experience: '30+ Years Neuro-Spine Mastery',
@@ -262,6 +276,7 @@ const DOCTOR_DETAILS = {
   },
   'Dr. Abha Majumdar': {
     name: 'Dr. Abha Majumdar',
+    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=500&q=80',
     title: 'Pioneer of IVF in Northern India',
     designation: 'Director & Head, IVF and Reproductive Medicine, Sir Ganga Ram Hospital',
     experience: '37+ Years Fertility Breakthroughs',
@@ -272,6 +287,7 @@ const DOCTOR_DETAILS = {
   },
   'Dr. Vinod Raina': {
     name: 'Dr. Vinod Raina',
+    image: 'https://images.unsplash.com/photo-1584467735815-f778f274e296?auto=format&fit=crop&w=500&q=80',
     title: 'Former Head of Medical Oncology, AIIMS New Delhi',
     designation: 'Chairman, Onco-Sciences & Bone Marrow Transplant, FMRI',
     experience: '40+ Years Oncology Authority',
@@ -904,40 +920,47 @@ function openHospitalModal(hospitalName) {
   if (!content) return;
 
   content.innerHTML = `
+    <div class="modal-banner-img-wrap" style="position: relative; height: 220px; border-radius: 16px; overflow: hidden; margin-bottom: 22px; box-shadow: var(--shadow-sm);">
+      <img src="${data.image}" alt="${data.title}" style="width: 100%; height: 100%; object-fit: cover;">
+      <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,23,42,0.1) 0%, rgba(15,23,42,0.7) 100%); display: flex; align-items: flex-end; padding: 20px;">
+        <span class="badge-accred jci-badge" style="background: rgba(255,255,255,0.92); color: var(--primary); font-weight: 700;">JCI & NABH Accredited Facility</span>
+      </div>
+    </div>
+
     <div class="modal-header">
       <span class="modal-badge">Hospital Profile & Infrastructure</span>
       <h2 class="modal-title" style="margin-top: 6px;">${data.title}</h2>
-      <p class="modal-subtitle" style="color: #38bdf8;">📍 ${data.location}</p>
+      <p class="modal-subtitle" style="color: var(--primary); font-weight: 600;">📍 ${data.location}</p>
     </div>
 
-    <div style="margin-bottom: 24px;">
-      <h4 style="font-family: var(--font-heading); color: #fff; margin-bottom: 8px;">Key Accreditations:</h4>
+    <div style="margin-bottom: 20px;">
+      <h4 style="font-family: var(--font-heading); color: var(--text-main); margin-bottom: 8px;">Key Accreditations:</h4>
       <div style="display: flex; gap: 8px; flex-wrap: wrap;">
         ${data.accreditations.map(acc => `<span class="badge-accred jci-badge">${acc}</span>`).join('')}
       </div>
     </div>
 
-    <div style="background: rgba(5, 12, 23, 0.6); padding: 18px; border-radius: 12px; margin-bottom: 24px; border: 1px solid rgba(255,255,255,0.08);">
+    <div style="background: var(--bg-subtle); padding: 18px; border-radius: 12px; margin-bottom: 22px; border: 1px solid var(--border-light);">
       <p style="color: var(--primary); font-weight: 700; margin-bottom: 4px;">Capacity & Infrastructure:</p>
-      <p style="color: #cbd5e1; font-size: 0.95rem;">${data.beds}</p>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">${data.beds}</p>
     </div>
 
-    <div style="margin-bottom: 24px;">
-      <h4 style="font-family: var(--font-heading); color: #fff; margin-bottom: 12px;">Specialty Highlights & International Services:</h4>
-      <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; color: #cbd5e1; font-size: 0.92rem;">
-        ${data.highlights.map(h => `<li style="display: flex; gap: 10px;"><span style="color: var(--primary); font-weight: bold;">✓</span> <span>${h}</span></li>`).join('')}
+    <div style="margin-bottom: 22px;">
+      <h4 style="font-family: var(--font-heading); color: var(--text-main); margin-bottom: 12px;">Specialty Highlights & International Services:</h4>
+      <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; color: var(--text-muted); font-size: 0.92rem;">
+        ${data.highlights.map(h => `<li style="display: flex; gap: 10px;"><span style="color: var(--secondary); font-weight: bold;">✓</span> <span>${h}</span></li>`).join('')}
       </ul>
     </div>
 
-    <div style="margin-bottom: 30px;">
-      <h4 style="font-family: var(--font-heading); color: #fff; margin-bottom: 10px;">Prominent Senior Surgeons & Faculty:</h4>
+    <div style="margin-bottom: 26px;">
+      <h4 style="font-family: var(--font-heading); color: var(--text-main); margin-bottom: 10px;">Prominent Senior Surgeons & Faculty:</h4>
       <div style="display: flex; gap: 8px; flex-wrap: wrap;">
         ${data.keyDoctors.map(doc => `<span class="feat-pill" style="font-size: 0.85rem; padding: 6px 14px;">${doc}</span>`).join('')}
       </div>
     </div>
 
-    <div class="modal-footer" style="padding-top: 20px;">
-      <div style="font-size: 0.85rem; color: #94a3b8;">
+    <div class="modal-footer" style="padding-top: 18px;">
+      <div style="font-size: 0.85rem; color: var(--text-dim);">
         100% Free Appointment & Visa Invitation Desk
       </div>
       <button class="btn btn-primary" onclick="closeDetailModal(); openConsultModal('Appointment - ${data.title}')">
@@ -959,38 +982,43 @@ function openDoctorModal(docName) {
   if (!content) return;
 
   content.innerHTML = `
-    <div class="modal-header">
-      <span class="modal-badge">${data.title}</span>
-      <h2 class="modal-title" style="margin-top: 6px;">${data.name}</h2>
-      <p class="modal-subtitle" style="color: #38bdf8; font-weight: 600;">${data.designation}</p>
-      <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 4px;">Credentials: ${data.credentials}</p>
-    </div>
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
-      <div style="background: rgba(5, 12, 23, 0.6); padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08);">
-        <span style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Clinical Experience</span>
-        <p style="font-size: 1.1rem; font-weight: 700; color: #ffffff;">${data.experience}</p>
+    <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border-light);">
+      <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; border: 3px solid var(--primary); flex-shrink: 0; box-shadow: var(--shadow-md);">
+        <img src="${data.image}" alt="${data.name}" style="width: 100%; height: 100%; object-fit: cover;">
       </div>
-      <div style="background: rgba(5, 12, 23, 0.6); padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08);">
-        <span style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Surgical Procedures</span>
-        <p style="font-size: 1.1rem; font-weight: 700; color: var(--primary);">${data.surgeries}</p>
+      <div>
+        <span class="modal-badge">${data.title}</span>
+        <h2 class="modal-title" style="margin-top: 4px; font-size: 1.5rem;">${data.name}</h2>
+        <p class="modal-subtitle" style="color: var(--primary); font-weight: 600; margin-top: 2px;">${data.designation}</p>
+        <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 4px;">Credentials: ${data.credentials}</p>
       </div>
     </div>
 
-    <div style="margin-bottom: 24px;">
-      <h4 style="font-family: var(--font-heading); color: #fff; margin-bottom: 8px;">Physician Biography & Global Standing:</h4>
-      <p style="font-size: 0.95rem; color: #cbd5e1; line-height: 1.7;">${data.bio}</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 22px;">
+      <div style="background: var(--bg-subtle); padding: 14px; border-radius: 12px; border: 1px solid var(--border-light);">
+        <span style="font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; font-weight: 700;">Clinical Experience</span>
+        <p style="font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin-top: 4px;">${data.experience}</p>
+      </div>
+      <div style="background: var(--bg-subtle); padding: 14px; border-radius: 12px; border: 1px solid var(--border-light);">
+        <span style="font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; font-weight: 700;">Surgical Procedures</span>
+        <p style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-top: 4px;">${data.surgeries}</p>
+      </div>
     </div>
 
-    <div style="margin-bottom: 30px;">
-      <h4 style="font-family: var(--font-heading); color: #fff; margin-bottom: 10px;">Key Surgical Specialties:</h4>
+    <div style="margin-bottom: 22px;">
+      <h4 style="font-family: var(--font-heading); color: var(--text-main); margin-bottom: 8px;">Physician Biography & Global Standing:</h4>
+      <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.7;">${data.bio}</p>
+    </div>
+
+    <div style="margin-bottom: 26px;">
+      <h4 style="font-family: var(--font-heading); color: var(--text-main); margin-bottom: 10px;">Key Surgical Specialties:</h4>
       <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-        ${data.specialties.map(spec => `<span class="feat-pill" style="font-size: 0.85rem; padding: 6px 14px; background: rgba(0,210,157,0.1); border-color: rgba(0,210,157,0.3); color: #fff;">${spec}</span>`).join('')}
+        ${data.specialties.map(spec => `<span class="feat-pill" style="font-size: 0.85rem; padding: 6px 14px; background: var(--primary-light); border-color: rgba(2,132,199,0.25); color: var(--primary);">${spec}</span>`).join('')}
       </div>
     </div>
 
-    <div class="modal-footer" style="padding-top: 20px;">
-      <div style="font-size: 0.85rem; color: #94a3b8;">
+    <div class="modal-footer" style="padding-top: 18px;">
+      <div style="font-size: 0.85rem; color: var(--text-dim);">
         Direct Video Consultation Available
       </div>
       <button class="btn btn-primary" onclick="closeDetailModal(); openConsultModal('Video Consult - ${data.name}')">
